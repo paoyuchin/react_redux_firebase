@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 const Notification = ()=>{
 return(
-  <div>
-    this is notification
+  <div className="Notification">
+    this is Notification
   </div>
 )
 };

@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import "../../index";
+
 class SignIn extends Component {
   state = {
     email: "",
@@ -16,13 +18,17 @@ class SignIn extends Component {
   };
   render() {
     return (
-      <div>
+      <div className="SignIn">
         <form onSubmit={this.handleSubmit}>
           <h5>sign in </h5>
           <label htmlFor="email">email</label>
           <input type="email" id="email" onChange={this.handleChange} />
           <label htmlFor="password">Password</label>
-          <input type="password" id="password" onChange={this.handleChange} />
+          <input
+            type="password"
+            id="password"
+            onChange={this.handleChange}
+          />
           <div>
             <button>login in</button>
           </div>
