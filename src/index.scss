@@ -1,5 +1,5 @@
 * {
-  outline: 1px solid red;
+  // outline: 1px solid red;
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -10,10 +10,6 @@
   box-sizing: border-box !important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
 
 .navbar {
   background-color: lightblue;
@@ -41,6 +37,18 @@ code {
       min-height: 300px;
       background-color: lightpink;
       margin: 20px;
+      .project_title{
+        color: red;
+        font-weight: bold;
+      }
+      .project_name{
+        color: bisque;
+        text-decoration: underline;
+      }
+      .project_time{
+        color: lightgray;
+        font-style:italic;
+      }
     }
   }
 }

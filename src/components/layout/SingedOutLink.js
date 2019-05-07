@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 const SignedOutLinks = () => {
   return (
     <React.Fragment>
-      <Link to="/">
+      <Link to="/signup">
         <span>signup</span>
       </Link>
-      <Link to="/">
+      <Link to="signin">
         <span>log in</span>
       </Link>
-      </React.Fragment>
+    </React.Fragment>
   );
 };
 export default SignedOutLinks;

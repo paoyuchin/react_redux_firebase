@@ -5,9 +5,10 @@ import {connect} from 'react-redux';
 
 class Dashboard extends Component {
   render() {
+    const { projects } = this.props;
     return (
       <div className="Dashboard">
-        <ProjectList />
+        <ProjectList projects={projects} />
         <Notification />
       </div>
     );
@@ -16,8 +17,8 @@ class Dashboard extends Component {
 
 const mapStateToPros = (state)=>{
   return {
-    projects: state.projects
-  }
+    projects: state.project.projects
+  };
 };
 
-export default connect()(Dashboard);
+export default connect(mapStateToPros)(Dashboard);

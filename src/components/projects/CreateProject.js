@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
+import { createProject } from '../../store/actions/projectActions';
 class CreateProject extends Component {
     state = {
         title: "",
@@ -6,7 +8,7 @@ class CreateProject extends Component {
     };
     handleSubmit = e => {
         e.preventDefault();
-        console.log(this.state);
+        this.props.createProject(this.state)
     };
     handleChange = e => {
         this.setState({
@@ -20,8 +22,8 @@ class CreateProject extends Component {
                     <h5>create my project</h5>
                     <label htmlFor="title">title</label>
                     <input type="text" id="title" onChange={this.handleChange} />
-                    <label htmlFor="content" onChange={this.handleChange}>project content</label>
-                    <textarea id="content"></textarea>
+                    <label htmlFor="content">project content</label>
+                    <textarea id="content" onChange={this.handleChange}></textarea>
                     <div>
                         <button>submit</button>
                     </div>
@@ -30,4 +32,12 @@ class CreateProject extends Component {
         );
     }
 }
-export default CreateProject;
+
+
+const mapDispatchToProps = dispatch => {
+  return {
+    createProject: project => dispatch(createProject(project))
+  };
+};
+
+export default connect(null, mapDispatchToProps)(CreateProject);

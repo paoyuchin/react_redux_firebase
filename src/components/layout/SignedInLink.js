@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 const SignedInLinks = () => {
   return (
     <React.Fragment>
-      <Link to="/">
+      <Link to="/createProject">
         <span>new project</span>
       </Link>
-      <Link to="/">
+      <Link to="/signup">
         <span>log out</span>
       </Link>
       <Link to="/">
-        <span> logo signature</span>
+        <span>^______^</span>
       </Link>
     </React.Fragment>
   );
