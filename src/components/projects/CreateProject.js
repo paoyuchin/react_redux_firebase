@@ -4,7 +4,7 @@ import { createProject } from '../../store/actions/projectActions';
 class CreateProject extends Component {
     state = {
         title: "",
-        content : ""
+        content : "",
     };
     handleSubmit = e => {
         e.preventDefault();
@@ -40,4 +40,11 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
+//store.dispatch
+
 export default connect(null, mapDispatchToProps)(CreateProject);
+
+
+//dispatch is a function of the Redux store
+// to dispatch an action.This is the only way to trigger a state change.
+//mapDispatchToProps lets you create functions that dispatch when called, and pass those functions as props to your component.

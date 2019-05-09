@@ -1,15 +1,18 @@
 {
-  "name": "react-redux-firebase",
+  "name": "react-redux-firebase_collection",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "firebase": "^6.0.1",
     "node-sass": "^4.12.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "react-redux": "^7.0.3",
+    "react-redux": "^5.1.1",
+    "react-redux-firebase": "^2.2.6",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.8",
     "redux": "^4.0.1",
+    "redux-firestore": "^0.7.3",
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
