@@ -4,10 +4,10 @@ const SignedOutLinks = () => {
   return (
     <React.Fragment>
       <Link to="/signup">
-        <span>signup</span>
+        <span>sign out</span>
       </Link>
       <Link to="signin">
-        <span>log in</span>
+        <span>sign out</span>
       </Link>
     </React.Fragment>
   );

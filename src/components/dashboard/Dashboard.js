@@ -18,7 +18,6 @@ class Dashboard extends Component {
 }
 
 const mapStateToPros = state => {
-  console.log('state:', state)
   return {
     projects: state.firestore.ordered.projects
   };

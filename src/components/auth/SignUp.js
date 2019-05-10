@@ -2,7 +2,9 @@ import React, { Component } from "react";
 class SignUp extends Component {
   state = {
     email: "",
-    password: ""
+    password: "",
+    firstName:'',
+    lastName:''
   };
   handleSubmit = e => {
     e.preventDefault();
@@ -21,6 +23,8 @@ class SignUp extends Component {
           <h5>sign Up </h5>
           <label htmlFor="email">email</label>
           <input type="email" id="email" onChange={this.handleChange} />
+          <label htmlFor="password">password</label>
+          <input type="password" id="password" onChange={this.handleChange} />
           <label htmlFor="firstname">first name</label>
           <input type="text" id="firstname" onChange={this.handleChange} />
           <label htmlFor="lastname">lastname</label>
