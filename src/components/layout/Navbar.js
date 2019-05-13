@@ -6,23 +6,24 @@ import "../../index";
 import { connect } from "react-redux";
 
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const { auth } = props;
+  console.log("auth", auth);
+  const link = auth.uid ? <SignedInLinks /> : <SignedOutLinks />;
   return (
     <div className="navbar">
       <Link to="/">
-        <span>bonbon</span> 
+        <span>MARIO PLAN</span>
       </Link>
-      <SignedInLinks />
-      <SignedOutLinks />
+      { link }
     </div>
   );
 };
 
 const mapStateToProps = (state) => {
-  // console.log('state', state)
   return {
-
-  }
+    auth: state.firebaseReducer.auth
+  };
 };
 
 export default connect(mapStateToProps)(Navbar);

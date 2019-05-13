@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { createProject } from '../../store/actions/projectActions';
+import { Redirect } from "react-router-dom";
+
 class CreateProject extends Component {
     state = {
         title: "",
@@ -19,13 +21,15 @@ class CreateProject extends Component {
 
 
     render() {
+        const { auth } = this.props;
+        if(!auth.uid) return <Redirect to='/signin' />
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <h5>create my project</h5>
+                    <h5>CREATE MY PROJECT</h5>
                     <label htmlFor="title">title</label>
                     <input type="text" id="title" onChange={this.handleChange} />
-                    <label htmlFor="content">project content</label>
+                    <label htmlFor="content">Project content</label>
                     <textarea id="content" onChange={this.handleChange}></textarea>
                     <div>
                         <button>submit</button>
@@ -36,6 +40,11 @@ class CreateProject extends Component {
     }
 }
 
+const mapStateToPros = state => {
+    return {
+        auth: state.firebaseReducer.auth
+    };
+};
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -45,7 +54,7 @@ const mapDispatchToProps = dispatch => {
 
 //store.dispatch
 
-export default connect(null, mapDispatchToProps)(CreateProject);
+export default connect(mapStateToPros, mapDispatchToProps)(CreateProject);
 
 
 //dispatch is a function of the Redux store

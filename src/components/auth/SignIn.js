@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../../index";
 import { connect } from "react-redux";
 import { signIn } from "../../store/actions/authAction";
+import { Redirect } from "react-router-dom";
 
 class SignIn extends Component {
   state = {
@@ -19,28 +20,33 @@ class SignIn extends Component {
     });
   };
   render() {
-    const { authError } = this.props;
-    return (
-      <div className="SignIn">
-        <form onSubmit={this.handleSubmit}>
-          <h5>Sign in!</h5>
-          <label htmlFor="email">email</label>
-          <input type="email" id="email" onChange={this.handleChange} />
-          <label htmlFor="password">Password</label>
-          <input type="password" id="password" onChange={this.handleChange} />
-          <div>
-            <button>login in</button>
-            <div>{authError ? <p>{authError}</p> : null}</div>
-          </div>
-        </form>
-      </div>
-    );
+    const { authError, auth } = this.props;
+    if (auth.uid) {
+      return <Redirect to="/" />;
+    } else {
+      return (
+        <div className="SignIn">
+          <form onSubmit={this.handleSubmit}>
+            <h5>SIGN IN YOUR EMAIL AND PASSWORD FOR SIGN IN</h5>
+            <label htmlFor="email">email</label>
+            <input type="email" id="email" onChange={this.handleChange} />
+            <label htmlFor="password">Password</label>
+            <input type="password" id="password" onChange={this.handleChange} />
+            <div>
+              <button>login in</button>
+              <div>{authError ? <p>{authError}</p> : null}</div>
+            </div>
+          </form>
+        </div>
+      );
+    }
   }
 }
 
 const mapStateToProps = state => {
   return {
-    authError: state.auth.authError
+    authError: state.auth.authError,
+    auth: state.firebaseReducer.auth
   };
 };
 

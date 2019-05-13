@@ -10,6 +10,13 @@ import thunk from "redux-thunk"; // redux-thunk is a middleware
 import { reduxFirestore, getFirestore } from "redux-firestore";
 import { reactReduxFirebase, getFirebase } from "react-redux-firebase";
 import fbConfig from "./config/fbConfig";
+
+// const rrfConfig = {
+//   attachAuthIsReady: true, // attaches auth is ready promise to store
+//   firebaseStateName: "firebaseState" // should match the reducer name ('firebase' is default)
+// };
+
+
 const store = createStore(
   rootRedcuer,
   compose(
@@ -19,17 +26,20 @@ const store = createStore(
   )
 );
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById("root")
-);
+// store.firebaseAuthIsReady.then(() => {
+  ReactDOM.render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    document.getElementById("root")
+  );
+  serviceWorker.unregister();
+// })
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
 
 //createStore(reducer, [preloadedState], [enhancer])
 //reducer(Function): A reducing function that returns the next state tree, given the current state tree and an action to handle.

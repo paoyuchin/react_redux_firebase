@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 const SignedOutLinks = () => {
   return (
     <React.Fragment>
-      <Link to="/signup">
-        <span>sign out</span>
+      <Link to="/signin">
+        <span>SIGN IN(登入)</span>
       </Link>
-      <Link to="signin">
-        <span>sign out</span>
+      <Link to="/signup">
+        <span>LOGIN IN(註冊)</span>
       </Link>
     </React.Fragment>
   );

@@ -82,9 +82,14 @@
 }
 
 ul{
-  width: 100%;
     display: inline-block;
+    margin: 15px;
   li{
     display: inline-block;
+    a{
+      display: inline-block;
+    margin: 15px;
+    cursor: pointer;
+    }
   }
 }
