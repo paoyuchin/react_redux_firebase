@@ -11,6 +11,7 @@ class CreateProject extends Component {
     handleSubmit = e => {
         e.preventDefault();
         this.props.createProject(this.state)
+        this.props.history.push('/');
     };
     handleChange = e => {
         this.setState({
@@ -42,7 +43,7 @@ class CreateProject extends Component {
 
 const mapStateToPros = state => {
     return {
-        auth: state.firebaseReducer.auth
+      auth: state.firebase.auth
     };
 };
 

@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
+import { signUp } from "../../store/actions/authAction";
 class SignUp extends Component {
   state = {
     email: "",
     password: "",
-    firstName:'',
-    lastName:''
+    firstName: "",
+    lastName: ""
   };
   handleSubmit = e => {
     e.preventDefault();
+    this.props.signUp(this.state);
   };
   handleChange = e => {
     this.setState({
@@ -17,9 +19,8 @@ class SignUp extends Component {
     });
   };
   render() {
-    const { auth } = this.props;
-    if (auth.uid) return <Redirect to='/' />
-
+    const { auth, authError } = this.props;
+    if (auth.uid) return <Redirect to="/" />;
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -27,15 +28,12 @@ class SignUp extends Component {
           <label htmlFor="email">email</label>
           <input type="email" id="email" onChange={this.handleChange} />
           <label htmlFor="password">password</label>
-          <input
-            type="password"
-            id="password"
-            onChange={this.handleChange}
-          />
-          <label htmlFor="firstname">first name</label>
-          <input type="text" id="firstname" onChange={this.handleChange} />
-          <label htmlFor="lastname">lastname</label>
-          <input type="text" id="lastname" onChange={this.handleChange} />
+          <input type="password" id="password" onChange={this.handleChange} />
+          <label htmlFor="firstName">first name</label>
+          <input type="text" id="firstName" onChange={this.handleChange} />
+          <label htmlFor="lastName">lastname</label>
+          <input type="text" id="lastName" onChange={this.handleChange} />
+          {authError ? <div className="authError">{authError}</div> : null}
           <div>
             <button>login in</button>
           </div>
@@ -48,7 +46,17 @@ class SignUp extends Component {
 
 const mapStateToProps = state => {
   return {
-    auth: state.firebaseReducer.auth
+    auth: state.firebase.auth,
+    authError: state.auth.authError
   };
 };
-export default connect(mapStateToProps)(SignUp); 
+
+const mapDispatchToProps = dispatch => {
+  return {
+    signUp: (newUser)=>{dispatch(signUp(newUser))}
+  };
+};
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SignUp); 

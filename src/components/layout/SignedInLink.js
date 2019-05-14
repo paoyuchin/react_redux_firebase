@@ -14,9 +14,7 @@ const SignedInLinks = props => {
         <li>
           <a onClick={props.signOut}>LOG OUT(登出)</a>
         </li>
-        <li>
-          <NavLink to="/">^______^</NavLink>
-        </li>
+        <li className="welcome">Hello, {props.profile.initials}</li>
       </ul>
     </React.Fragment>
   );

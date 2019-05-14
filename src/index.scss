@@ -74,11 +74,7 @@
     font-weight: bold;
     font-size: 20px;
   }
-  .post_time{
-    color: blue;
-    font-weight: bold;
-    font-size: 20px;
-  }
+
 }
 
 ul{
@@ -86,6 +82,7 @@ ul{
     margin: 15px;
   li{
     display: inline-block;
+    text-transform: uppercase;
     a{
       display: inline-block;
     margin: 15px;
@@ -93,3 +90,26 @@ ul{
     }
   }
 }
+
+.authError{
+  background-color:red;
+  color: white;
+  font-size: 20px;
+  margin-top: 20px;
+}
+.welcome{
+  font-size: 20px;
+  color: darkblue;
+  font-weight: bold;
+}
+
+.postPerson{
+  font-size: 20px;
+  font-weight: bold;
+  color: brown;
+}
+  .post_time{
+    color: blue;
+    font-weight: bold;
+    font-size: 20px;
+  }

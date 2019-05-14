@@ -20,6 +20,18 @@ const authReducer = (state = initState, action) => {
       return {
         state
       };
+    case "SIGNUP_SUCCESS":
+      alert("註冊成功 SIGNUP_SUCCESS");
+      return {
+        ...state, 
+        authError: null
+      };
+    case "SIGNUP_ERROR":
+      alert("註冊失敗 SIGNUP_ERROR");
+      return {
+        ...state,
+        authError: action.err.message
+      };
     default:
       return state;
   }
