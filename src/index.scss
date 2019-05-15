@@ -10,7 +10,6 @@
   box-sizing: border-box !important;
 }
 
-
 .navbar {
   background-color: lightblue;
   width: 100%;
@@ -31,33 +30,38 @@
 .Dashboard {
   width: 100%;
   height: auto;
+  clear: both;
+      margin: 20px;
+
   .ProjectList {
     height: auto;
+    width: 50%;
+    float: left;
     .project_summary {
       min-height: 300px;
-      background-color: lightpink;
-      margin: 20px;
-      .project_title{
+      background-color:lightgray;
+      .project_title {
         color: red;
         font-weight: bold;
       }
-      .project_name{
+      .project_name {
         color: bisque;
         text-decoration: underline;
       }
-      .project_time{
+      .project_time {
         color: lightgray;
-        font-style:italic;
+        font-style: italic;
       }
     }
   }
-}
-
-.Notification {
-  color: red;
-  font-weight: bold;
-  width: 100%;
-  height: auto;
+  .Notification {
+    background-color:lightgoldenrodyellow;
+    width: 50%;
+    color: red;
+    font-weight: bold;
+    height: auto;
+    float: right
+  }
 }
 
 .ProjectDetails {
@@ -74,42 +78,41 @@
     font-weight: bold;
     font-size: 20px;
   }
-
 }
 
-ul{
-    display: inline-block;
-    margin: 15px;
-  li{
+ul {
+  display: inline-block;
+  margin: 15px;
+  li {
     display: inline-block;
     text-transform: uppercase;
-    a{
+    a {
       display: inline-block;
-    margin: 15px;
-    cursor: pointer;
+      margin: 15px;
+      cursor: pointer;
     }
   }
 }
 
-.authError{
-  background-color:red;
+.authError {
+  background-color: red;
   color: white;
   font-size: 20px;
   margin-top: 20px;
 }
-.welcome{
+.welcome {
   font-size: 20px;
   color: darkblue;
   font-weight: bold;
 }
 
-.postPerson{
+.postPerson {
   font-size: 20px;
   font-weight: bold;
   color: brown;
 }
-  .post_time{
-    color: blue;
-    font-weight: bold;
-    font-size: 20px;
-  }
+.post_time {
+  color: blue;
+  font-weight: bold;
+  font-size: 20px;
+}
