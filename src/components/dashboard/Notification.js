@@ -7,14 +7,18 @@ const Notification = props => {
   return (
     <div className="Notification">
       <h2>NOTIFICATION BOARD</h2>
-      {notifications && notifications.map((item)=>{
+      <ul>
+      { notifications && notifications.map((item)=>{
         return (
-            <div>
-            <li>{item.user}</li>
-            <li>{moment(item.time.toDate().fromNow)}</li>
-            </div>
-        );
-      })}
+          <li className="notification_list">
+          <span className="username">{item.user} </span>
+          <span className="action">{item.content} </span>
+          <span className="action_time">{moment(item.time.toDate()).fromNow()}</span>
+          </li>
+        )
+      })}      
+      </ul>
+
     </div>
   );
 };
