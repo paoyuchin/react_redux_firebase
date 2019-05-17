@@ -9,7 +9,6 @@ import { Redirect } from "react-router-dom";
 
 const ProjectDetails = props => {
   const { project, auth } = props;
-  console.log(111111111111, project);
   if (!auth.uid) return <Redirect to="/signin" />;
   if (project) {
     return (
@@ -34,7 +33,6 @@ const ProjectDetails = props => {
 };
 
 const mapStateToProps = (state, ownProps) => {
-  console.log('//////////////////', state);
   const id = ownProps.match.params.id;
   const projects = state.firestore.data.projects;
   const project = projects ? projects[id] : null;

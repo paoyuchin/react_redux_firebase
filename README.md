@@ -67,14 +67,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
-
-### `note
-facebook singup
-google singup
-
-create upload photos
-<!-- each product can give like -->
-disscuss board
-搜尋列
-sendOTP
-

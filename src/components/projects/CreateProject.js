@@ -32,6 +32,7 @@ class CreateProject extends Component {
                     <input type="text" id="title" onChange={this.handleChange} />
                     <label htmlFor="content">Project content</label>
                     <textarea id="content" onChange={this.handleChange}></textarea>
+                    <input type="file"/>
                     <div>
                         <button>submit</button>
                     </div>

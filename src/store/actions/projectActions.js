@@ -2,6 +2,7 @@ export const createProject = project => (dispatch, getState,{ getFirestore, getF
   const firestore = getFirestore();
   const profile = getState().firebase.profile;
   const authorID = getState().firebase.auth.uid;
+    console.log(1, getState().firebase)
   firestore.collection("projects").add({
     ...project,
       authorFirstName: profile.firstName,
