@@ -15,7 +15,6 @@ class ProjectSummary extends React.Component {
         <div className="project_title">{project.title}</div>
         <p className="project_name">{project.content}</p>
         <div className="pic">
-          <img src={this.state.imageURL} alt="pic"/>
         </div>
         <div className="postPerson">
           psot by: {project.authorFirstName} {project.authorLastName}

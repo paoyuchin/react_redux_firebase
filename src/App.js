@@ -5,7 +5,7 @@ import Dashboard from "./components/dashboard/Dashboard";
 import ProjectDetails from './components/projects/ProjectDetail';
 import ProductDetails from "./components/products/ProductDetails";
 import SignIn from './components/auth/SignIn';
-import SignUp from './components/auth/SignUp';
+import SignUp from "./components/auth/SignUp";
 import CreateProject from './components/projects/CreateProject';
 import Products from './components/dashboard/Products';
 

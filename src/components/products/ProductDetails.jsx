@@ -6,6 +6,8 @@ import { compose } from "redux";
 import { Redirect } from "react-router-dom";
 import "../../config/fbConfig";
 import firebase from "firebase/app";
+import { imageUrlAction } from "../../store/actions/imageUrlAction";
+
 
 class ProductDetails extends React.Component {
   render() {

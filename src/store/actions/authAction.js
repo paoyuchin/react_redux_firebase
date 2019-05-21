@@ -50,3 +50,17 @@ export const signUp = (newUser) => {
           })
     }
 };
+
+export const signInWithGoogleAccount = () => {
+    return (dispatch, getState, { getFirebase, getFirestore }) => {
+
+        const firebase = getFirebase();
+        var googleProvider = new firebase.auth.GoogleAuthProvider();
+        firebase
+          .auth()
+          .signInWithPopup(googleProvider)
+          .then((userInformation) => {
+              console.log("userInformation", userInformation);
+          });
+    }
+};
