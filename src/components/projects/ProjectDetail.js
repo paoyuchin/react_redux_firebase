@@ -9,31 +9,32 @@ import "../../config/fbConfig";
 import firebase from "firebase/app";
 
 class ProjectDetails extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      imageURL: ""
-    };
-  }
-  componentDidMount(){
-    this.getImage(this.props.project.imageTitle);
-  }
-  getImage(imageTitle) {
-    var storage = firebase.storage();
-    var storageRef = storage.ref();
-    storageRef
-      .child(`${imageTitle}.jpg`)
-      .getDownloadURL()
-      .then(url => {
-        console.log(url)
-        this.setState({
-          imageURL: url
-        });
-      })
-      .catch(error => {
-        console.log(error)
-      });
-  }
+  // constructor(props) {
+  //   super(props);
+  //   // this.state = {
+  //   //   imageURL: ""
+  //   // };
+  // }
+  // componentDidMount(){
+  //   this.getImage(this.props.project.imageTitle);
+  // }
+  // getImage(imageTitle) {
+  //   console.log("getImage works work in project detail");
+  //   var storage = firebase.storage();
+  //   var storageRef = storage.ref();
+  //   storageRef
+  //     .child(`${imageTitle}.jpg`)
+  //     .getDownloadURL()
+  //     .then(url => {
+  //       console.log(url)
+  //       this.setState({
+  //         imageURL: url
+  //       });
+  //     })
+  //     .catch(error => {
+  //       console.log(error)
+  //     });
+  // }
 
   render() {
     const { project, auth } = this.props;
@@ -44,9 +45,9 @@ class ProjectDetails extends React.Component {
           <span className="project_id">
             your project id : {project.title}
           </span>
-          <div>
+          {/* <div className='pic'>
             <img src={this.state.imageURL} />
-          </div>
+          </div> */}
           <div className="posted_by">{project.content}</div>
           <div className="postPerson">
             psot by: {project.authorFirstName} {project.authorLastName}
@@ -59,7 +60,7 @@ class ProjectDetails extends React.Component {
     } else {
       return (
         <div>
-          <p>loading...</p>
+          <p>loading... projectdetail</p>
         </div>
       );
     }
@@ -70,7 +71,6 @@ const mapStateToProps = (state, ownProps) => {
   const id = ownProps.match.params.id;
   const projects = state.firestore.data.projects;
   const project = projects ? projects[id] : null;
-  console.log("project", project);
   return {
     project: project,
     auth: state.firebase.auth
