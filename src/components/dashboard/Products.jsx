@@ -10,9 +10,6 @@ import "../../config/fbConfig";
 import { imageUrlAction } from "../../store/actions/imageUrlAction";
 
 class Products extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     const { products } = this.props;
