@@ -14,9 +14,12 @@ class Products extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.createImageUrlFromFirebase(this.props.productsImageName);  
+  }
+
   render() {
     const { products } = this.props;
-    this.props.createImageUrlFromFirebase(this.props.productsImageName);  
     return (
       <div className="ProjectList">
         {products &&
