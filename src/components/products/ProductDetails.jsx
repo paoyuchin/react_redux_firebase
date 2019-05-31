@@ -16,16 +16,16 @@ class ProductDetails extends React.Component {
       return (
         <div className="ProjectDetails">
           <span className="project_id">
-            your prodcut Content : {product.prodcutContent}
+            your prodcut Content : {product.productContent}
           </span>
-          <div className="posted_by">{product.prodcutName}</div>
-          <div className="postPerson">{product.prodcutPrice}</div>
+          <div className="posted_by">{product.productName}</div>
+          <div className="postPerson">{product.productPrice}</div>
         </div>
       );
     } else {
       return (
         <div>
-          <p>loading...product details</p>
+          <p>loading.</p>
         </div>
       );
     }

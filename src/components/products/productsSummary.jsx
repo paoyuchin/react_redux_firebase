@@ -8,16 +8,38 @@ import { imageUrlAction } from "../../store/actions/imageUrlAction";
 class ProjectDetails extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      imageURL: "https://demos.laraget.com/images/loading2.gif"
+    };
   }
+  componentDidMount() {
+      this.createImageUrlFromFirebase(this.props.product.imageName);
+  }
+  createImageUrlFromFirebase = imageName => {
+    var storage = firebase.storage();
+    var storageRef = storage.ref();
+    storageRef
+      .child(`${imageName}.jpg`)
+      .getDownloadURL()
+      .then(url => {
+        this.setState({
+          imageURL: url
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
   render() {
     const { product } = this.props;
+    console.log('product', product)
     return (
       <div className="project_summary">
         <p>productID: {product.id}</p>
-        <p>產品名字: {product.prodcutName}</p>
-        <p>產品內容: {product.prodcutContent}</p>
-        <p>產品價格: {product.prodcutPrice}</p>
-        <img className="pic" src={this.props.imageURL} alt="圖片出現錯誤"/>
+        <p>產品名字: {product.productName}</p>
+        <p>產品內容: {product.productContent}</p>
+        <p>產品價格: {product.productPrice}</p>
+        <img className="pic" src={this.state.imageURL} alt="圖片出現錯誤"/>
       </div>
     );
   }
