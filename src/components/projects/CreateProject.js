@@ -11,7 +11,8 @@ class CreateProject extends Component {
     handleSubmit = e => {
         e.preventDefault();
         const { auth } = this.props;
-        this.props.createProject(this.state, auth.appName);
+        console.log(auth)
+        this.props.createProject(this.state);
         this.props.history.push('/');
     };    
     handleChange = e => {
