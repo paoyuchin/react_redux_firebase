@@ -1,13 +1,15 @@
-export const createProject = project => (dispatch, getState,{ getFirestore, getFirebase } ) => {
+export const createProject = (project) => (dispatch, getState,{ getFirestore } ) => {
   const firestore = getFirestore();
   const profile = getState().firebase.profile;
   const authorID = getState().firebase.auth.uid;
-    console.log(1, getState().firebase)
+  const authorNameSignInWithGoogle = getState().firebase.displayName;
+  const authorIDSignInWithGoogle = getState().firebase.uid;
+  console.log('///////////////////', project)
   firestore.collection("projects").add({
     ...project,
-      authorFirstName: profile.firstName,
-      authorLastName: profile.lastName,
-      authorID: authorID,
+      authorFirstName: profile.firstName || authorNameSignInWithGoogle,
+      authorLastName: profile.lastName || authorNameSignInWithGoogle,
+      authorID: authorID || authorIDSignInWithGoogle,
     creatAt: new Date()
   }).then(()=>{
       dispatch({
@@ -21,6 +23,31 @@ export const createProject = project => (dispatch, getState,{ getFirestore, getF
       });
   })
 };
+
+
+// export const createProjectWithGoogleSignIn = project => (dispatch, getState, { getFirestore }) => {
+//   const firestore = getFirestore();
+//   const profile = getState().firebase.profile;
+//   const authorID = getState().firebase.auth.uid;
+//   console.log(1, getState().firebase)
+//   firestore.collection("projects").add({
+//     ...project,
+//     authorFirstName: profile.firstName,
+//     authorLastName: profile.lastName,
+//     authorID: authorID,
+//     creatAt: new Date()
+//   }).then(() => {
+//     dispatch({
+//       type: "CREATE_PROJECT",
+//       project
+//     });
+//   }).catch((err) => {
+//     dispatch({
+//       type: "CREATE_PROJECT_ERR",
+//       err
+//     });
+//   })
+// };
 
 // export const createProject = (project) => (
 //     {

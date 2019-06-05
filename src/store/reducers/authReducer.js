@@ -1,5 +1,6 @@
 const initState = {
-  authError: null
+  authError: null,
+  googleSigninInformation: null
 };
 const authReducer = (state = initState, action) => {
   switch (action.type) {
@@ -10,7 +11,7 @@ const authReducer = (state = initState, action) => {
         authError: "LOGIN_FAILED"
       };
     case "LOGIN_SUCCESS":
-      alert("LOGIN_SUCCESS");
+      alert("登入成功 LOGIN_SUCCESS");
       return {
         ...state,
         authError: "LOGIN_SUCCESS"
@@ -22,8 +23,9 @@ const authReducer = (state = initState, action) => {
       };
     case "SIGNUP_SUCCESS":
       alert("註冊成功 SIGNUP_SUCCESS");
+      console.log("註冊成功", state);
       return {
-        ...state, 
+        ...state,
         authError: null
       };
     case "SIGNUP_ERROR":
@@ -31,6 +33,12 @@ const authReducer = (state = initState, action) => {
       return {
         ...state,
         authError: action.err.message
+      };
+    case "GOOGLE_SIGNUP_SUCCESS":
+      alert("google登入成功");
+      console.log("google登入成功", action.userInformation);
+      return {
+        googleSigninInformation: action.userInformation
       };
     default:
       return state;

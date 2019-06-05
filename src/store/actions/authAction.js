@@ -68,13 +68,16 @@ export const signInWithGoogleAccount = () => {
         getFirebase,
         getFirestore
     }) => {
-
         const firebase = getFirebase();
         var googleProvider = new firebase.auth.GoogleAuthProvider();
         firebase
             .auth()
             .signInWithPopup(googleProvider)
             .then((userInformation) => {
+                dispatch({
+                    type: "GOOGLE_SIGNUP_SUCCESS",
+                    userInformation
+                });
                 console.log("userInformation", userInformation);
             });
     }

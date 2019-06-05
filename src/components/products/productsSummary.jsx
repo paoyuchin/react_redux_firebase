@@ -3,7 +3,6 @@ import "../../index";
 import "../../config/fbConfig";
 import firebase from "firebase/app";
 import { connect } from "react-redux";
-import { imageUrlAction } from "../../store/actions/imageUrlAction";
 
 class ProjectDetails extends React.Component {
   constructor(props) {
@@ -32,7 +31,6 @@ class ProjectDetails extends React.Component {
   };
   render() {
     const { product } = this.props;
-    console.log('product', product)
     return (
       <div className="project_summary">
         <p>productID: {product.id}</p>

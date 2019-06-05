@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 import { signIn } from "../../store/actions/authAction";
 import { signInWithGoogleAccount } from "../../store/actions/authAction";
 import { Redirect } from "react-router-dom";
-// import { signInWithGoogleAccount } from "../../store/actions/authAction";
 import firebase from "firebase/app";
 
 class SignIn extends Component {
@@ -27,7 +26,6 @@ class SignIn extends Component {
     this.props.signInWithGoogleAccount();
   };
   render() {
-    console.log("this.props", this.props);
     const { authError, auth } = this.props;
     if (auth.uid)  return <Redirect to='/' />;
       return (

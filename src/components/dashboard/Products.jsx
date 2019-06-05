@@ -12,14 +12,8 @@ import { Link } from "react-router-dom";
 import ProductsSummary from "../products/productsSummary";
 import { link } from "fs";
 import "../../config/fbConfig";
-import { imageUrlAction } from "../../store/actions/imageUrlAction";
 
 class Products extends React.Component {
-
-  componentDidMount() {
-    this.props.createImageUrlFromFirebase(this.props.productsImageName);  
-  }
-
   render() {
     const { products } = this.props;
     return (
@@ -45,16 +39,11 @@ const mapStateToPros = state => {
   };
 };
 
-const mapDispatchToProps = disptach => {
-  return {
-    createImageUrlFromFirebase: imageName => disptach(imageUrlAction(imageName))
-  };
-};
 
 export default compose(
   connect(
     mapStateToPros,
-    mapDispatchToProps
+    
   ),
   firestoreConnect([{ collection: "products" }])
 )(Products);

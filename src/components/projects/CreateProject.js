@@ -10,9 +10,10 @@ class CreateProject extends Component {
     };
     handleSubmit = e => {
         e.preventDefault();
-        this.props.createProject(this.state)
+        const { auth } = this.props;
+        this.props.createProject(this.state, auth.appName);
         this.props.history.push('/');
-    };
+    };    
     handleChange = e => {
         this.setState({
             [e.target.id]: e.target.value
@@ -42,6 +43,7 @@ class CreateProject extends Component {
 }
 
 const mapStateToPros = state => {
+    // console.log(999, state.firebase.auth);
     return {
       auth: state.firebase.auth
     };
