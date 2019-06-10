@@ -14,11 +14,14 @@ const Navbar = props => {
   );
   return (
     <div className="navbar">
+      <Link to="/home">
+        <span>Home</span>
+      </Link>
       <Link to="/products">
         <span>PRODUCT</span>
       </Link>
       <Link to="/">
-        <span>MARIO PLAN</span>
+        <span>REVIEWS</span>
       </Link>
       {link}
     </div>
@@ -26,7 +29,6 @@ const Navbar = props => {
 };
 
 const mapStateToProps = state => {
-  console.log(300, 'state', state)
   return {
     auth: state.firebase.auth,
     profile: state.firebase.profile

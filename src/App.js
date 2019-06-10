@@ -6,6 +6,7 @@ import ProjectDetails from './components/projects/ProjectDetail';
 import ProductDetails from "./components/products/ProductDetails";
 import SignIn from './components/auth/SignIn';
 import SignUp from "./components/auth/SignUp";
+import Home from "./components/home/Home";
 import CreateProject from './components/projects/CreateProject';
 import Products from './components/dashboard/Products';
 
@@ -19,6 +20,7 @@ class App extends Component {
             <Route exact path="/products" component={Products} />
             <Route path="/products/:id" component={ProductDetails} />
             <Route path="/project/:id" component={ProjectDetails} />
+            <Route path="/home/" component={Home} />
             <Route exact path="/" component={Dashboard} />
             <Route path="/signin" component={SignIn} />
             <Route path="/signup" component={SignUp} />

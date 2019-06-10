@@ -43,7 +43,6 @@ const mapStateToPros = state => {
 export default compose(
   connect(
     mapStateToPros,
-    
-  ),
+),
   firestoreConnect([{ collection: "products" }])
 )(Products);

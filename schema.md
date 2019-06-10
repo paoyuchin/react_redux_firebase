@@ -4,3 +4,7 @@ product{
   productPrice,
   imageName
 }
+aboutus{
+  reason,
+  who
+}
