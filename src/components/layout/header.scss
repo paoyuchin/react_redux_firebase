@@ -1,0 +1,273 @@
+.navigation_bar {
+  background-image: url(http://katofarm-f.jp/images/assets/bg-index-mainvisual@2x.png);
+  background-size: 2000px auto;
+  background-repeat: no-repeat;
+  background-position: top;
+  position: relative;
+  height: 820px;
+
+  background-size: 2000px auto;
+  background-repeat: no-repeat;
+  background-position: top;
+  position: relative;
+  height: 820px;
+
+  // common css setting
+  @mixin cloud(
+    $width,
+    $height,
+    $afterWidth,
+    $afterHeight,
+    $beforeWidth,
+    $beforeHeight
+  ) {
+    width: $width;
+    height: $height;
+    background-color: white;
+    position: absolute;
+    border-radius: 100px;
+    &:after {
+      width: $afterWidth;
+      height: $afterHeight;
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background-color: white;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      background-color: white;
+      width: $beforeWidth;
+      height: $beforeHeight;
+      border-radius: 100px;
+    }
+  }
+
+  // logo animation
+  @keyframes nav-product {
+    0% {
+      background-position: 0 0;
+    }
+
+    100% {
+      background-position: 0 -450px;
+    }
+  }
+
+  @keyframes nav-about {
+    0% {
+      background-position: 0 0;
+    }
+
+    100% {
+      background-position: 0 -770px;
+    }
+  }
+
+  //grass
+  .cloud1 {
+    color: #3c3530;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+    display: block;
+    width: 180px;
+    height: 124px;
+    background: url(http://katofarm-f.jp/svg/bg-nav-katofarm.svg) no-repeat 0 0;
+    background-size: 100% auto;
+    left: 4%;
+    top: 30%;
+    position: absolute;
+
+    p {
+      text-align: center;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  //rice
+  .cloud2 {
+    color: #3c3530;
+    font-size: 12px;
+    font-weight: bold;
+    display: block;
+    width: 180px;
+    height: 124px;
+    background: url(http://katofarm-f.jp/svg/bg-nav-product-cloud.svg) no-repeat
+      0 0;
+    background-size: 100% auto;
+    left: 22%;
+    top: 12%;
+    position: absolute;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover .grass_img {
+      animation: nav-product 1.3s steps(9) infinite;
+    }
+    .grass_img {
+      position: absolute;
+      top: 30px;
+      left: 60px;
+      width: 60px;
+      height: 50px;
+      background: url(http://katofarm-f.jp/sprite/nav-product-sprite@2x.png)
+        no-repeat 0 0;
+      background-size: 60px 500px;
+    }
+  }
+
+  .cloud3 {
+    position: absolute;
+    background: url(http://katofarm-f.jp/svg/bg-nav-product-cloud.svg) no-repeat
+      0 0;
+    background-size: 100% auto;
+    width: 193px;
+    height: 113px;
+    left: 40%;
+    top: 32%;
+    color: #3c3530;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover .note_img {
+      animation: nav-product 1.3s steps(9) infinite;
+    }
+
+    .note_img {
+      position: absolute;
+      top: 30px;
+      left: 60px;
+      width: 60px;
+      height: 50px;
+      background: url(http://katofarm-f.jp/sprite/nav-letters-sprite@2x.png)
+        no-repeat 0 0;
+      background-size: 60px 500px;
+    }
+  }
+
+  //grass
+  .cloud4 {
+    position: absolute;
+    background: url(http://katofarm-f.jp/svg/bg-nav-about-cloud.svg) no-repeat 0
+      0;
+    background-size: 100% auto;
+    width: 193px;
+    height: 113px;
+    left: 65%;
+    top: 41%;
+    color: #3c3530;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover .grassimg {
+      animation: nav-about 1s steps(14) infinite;
+    }
+
+    .grassimg {
+      top: 40px;
+      left: 70px;
+      width: 55px;
+      height: 55px;
+      background: url(http://katofarm-f.jp/sprite/nav-about-sprite@2x.png)
+        no-repeat 0 0;
+      background-size: 53px 825px;
+      position: absolute;
+    }
+  }
+
+  //sun
+  .sun {
+    border-radius: 153px 156px 183px 171px;
+    background-color: rgb(231, 125, 88);
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    top: 85px;
+    left: 83%;
+    transition: top 0.1s ease;
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .sunbeams {
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      top: -25px;
+      left: -25px;
+      animation: spin 28s linear 0s infinite;
+
+      .beam {
+        width: 5px;
+        height: 34px;
+        background-color: rgb(231, 125, 88);
+        position: absolute;
+      }
+
+      .beam1 {
+        transform: rotate(0deg);
+        top: -24px;
+        left: 83px;
+      }
+
+      .beam2 {
+        transform: rotate(45deg);
+        top: 19px;
+        left: 152px;
+      }
+
+      .beam3 {
+        transform: rotate(90deg);
+        top: 70px;
+        left: 159px;
+      }
+
+      .beam4 {
+        transform: rotate(135deg);
+        top: 129px;
+        left: 150px;
+      }
+
+      .beam5 {
+        transform: rotate(180deg);
+        top: 149px;
+        left: 80px;
+      }
+
+      .beam6 {
+        transform: rotate(225deg);
+        top: 131px;
+        left: 2px;
+      }
+
+      .beam7 {
+        transform: rotate(270deg);
+        top: 72px;
+        left: -17px;
+      }
+
+      .beam8 {
+        transform: rotate(315deg);
+        top: -4px;
+        left: 3px;
+      }
+    }
+  }
+}

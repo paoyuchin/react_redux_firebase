@@ -4,6 +4,7 @@ import SignedInLinks from "./SignedInLink";
 import SignedOutLinks from "./SingedOutLink";
 import "../../index";
 import { connect } from "react-redux";
+import "./header.scss";
 
 const Navbar = props => {
   const { auth, profile } = props;
@@ -15,13 +16,22 @@ const Navbar = props => {
   return (
     <div className="navigation_bar">
       <Link to="/">
-        <span>Home</span>
+        <p class="cloud1">
+          Home
+          <img src="http://katofarm-f.jp/svg/logo.svg" alt="logo" />
+        </p>
       </Link>
       <Link to="/products">
-        <span>PRODUCT</span>
+        <span class="cloud2">
+          PRODUCT
+          <div className="grass_img" />
+        </span>
       </Link>
       <Link to="/Dashboard">
-        <span>REVIEWS</span>
+        <span class="cloud3">
+          REVIEWS
+          <div className="note_img" />
+        </span>
       </Link>
       {link}
     </div>
