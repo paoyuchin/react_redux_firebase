@@ -13,10 +13,11 @@ export const weatherAction = () => {
       const jsonResponse = await response.json()
       console.log('jsonResponse', jsonResponse)
       dispatch({
-        type: 'GET_WEATHER',
+        type: "GET_WEATHER",
         weather_res: {
           weather: jsonResponse.weather[0].description,
-          cityName: jsonResponse.name
+          cityName: jsonResponse.name,
+          weatherIconUrl: `http://openweathermap.org/img/w/${jsonResponse.weather[0].icon}.png`
         }
       });
     });   

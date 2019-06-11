@@ -17,7 +17,6 @@ const Notification = props => {
         )
       })}      
       </ul>
-
     </div>
   );
 };

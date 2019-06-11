@@ -1,53 +1,54 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux';
-import { createProject } from '../../store/actions/projectActions';
+import { connect } from "react-redux";
+import { createProject } from "../../store/actions/projectActions";
 import { Redirect } from "react-router-dom";
 
 class CreateProject extends Component {
-    state = {
-        title: "",
-        content : "",
-    };
-    handleSubmit = e => {
-        e.preventDefault();
-        const { auth } = this.props;
-        console.log(auth)
-        this.props.createProject(this.state);
-        this.props.history.push('/');
-    };    
-    handleChange = e => {
-        this.setState({
-            [e.target.id]: e.target.value
-        });
-    };
+  state = {
+    title: "",
+    content: ""
+  };
+  handleSubmit = e => {
+    e.preventDefault();
+    const { auth } = this.props;
+    console.log(auth);
+    this.props.createProject(this.state);
+    this.props.history.push("/");
+  };
+  handleChange = e => {
+    this.setState({
+      [e.target.id]: e.target.value
+    });
+  };
 
-
-
-    render() {
-        const { auth } = this.props;
-        if(!auth.uid) return <Redirect to='/signin' />
-        return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <h5>CREATE MY PROJECT</h5>
-                    <label htmlFor="title">title</label>
-                    <input type="text" id="title" onChange={this.handleChange} />
-                    <label htmlFor="content">Project content</label>
-                    <textarea id="content" onChange={this.handleChange}></textarea>
-                    <div>
-                        <button>submit</button>
-                    </div>
-                </form>
-            </div>
-        );
+  render() {
+    const { auth } = this.props;
+    if (!auth.uid) {
+        alert('please sign in before makes review, page will reload to sign in page automatically')
+      return <Redirect to="/signin" />;
     }
+    return (
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <h5>CREATE MY PROJECT</h5>
+          <label htmlFor="title">title</label>
+          <input type="text" id="title" onChange={this.handleChange} />
+          <label htmlFor="content">Project content</label>
+          <textarea id="content" onChange={this.handleChange} />
+          <div>
+            <button>submit</button>
+          </div>
+        </form>
+      </div>
+    );
+  }
 }
 
 const mapStateToPros = state => {
-    // console.log(999, state.firebase.auth);
-    return {
-      auth: state.firebase.auth
-    };
+  // console.log(999, state.firebase.auth);
+  return {
+    auth: state.firebase.auth
+  };
 };
 
 const mapDispatchToProps = dispatch => {
@@ -58,8 +59,10 @@ const mapDispatchToProps = dispatch => {
 
 //store.dispatch
 
-export default connect(mapStateToPros, mapDispatchToProps)(CreateProject);
-
+export default connect(
+  mapStateToPros,
+  mapDispatchToProps
+)(CreateProject);
 
 //dispatch is a function of the Redux store
 // to dispatch an action.This is the only way to trigger a state change.

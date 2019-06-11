@@ -32,11 +32,10 @@ export const signOut = () => {
 };
 
 export const signUp = (newUser) => {
-    return (dispatch, getState, {
+    return (dispatch, {
         getFirebase,
         getFirestore
     }) => {
-        console.log("newUser", newUser);
         const firebase = getFirebase();
         const firestore = getFirestore();
         firebase

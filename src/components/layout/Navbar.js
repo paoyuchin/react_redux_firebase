@@ -13,14 +13,14 @@ const Navbar = props => {
     <SignedOutLinks />
   );
   return (
-    <div className="navbar">
-      <Link to="/home">
+    <div className="navigation_bar">
+      <Link to="/">
         <span>Home</span>
       </Link>
       <Link to="/products">
         <span>PRODUCT</span>
       </Link>
-      <Link to="/">
+      <Link to="/Dashboard">
         <span>REVIEWS</span>
       </Link>
       {link}
