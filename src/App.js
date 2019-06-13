@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, withRouter} from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Dashboard from "./components/dashboard/Dashboard";
 import ProjectDetails from './components/projects/ProjectDetail';
@@ -9,9 +9,11 @@ import SignUp from "./components/auth/SignUp";
 import Home from "./components/home/Home";
 import CreateProject from './components/projects/CreateProject';
 import Products from './components/dashboard/Products';
+import { connect } from "react-redux";
 
 class App extends Component {
   render() {
+    const { match, location, history } = this.props;
     return (
       <BrowserRouter>
         <div>
@@ -31,5 +33,8 @@ class App extends Component {
     );
   }
 }
+
+
+
 
 export default App;

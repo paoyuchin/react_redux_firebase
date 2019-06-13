@@ -5,10 +5,9 @@ import { connect } from "react-redux";
 import { signOut } from "../../store/actions/authAction";
 
 const SignedInLinks = props => {
-  console.log('props', props)
   return (
     <React.Fragment>
-      <ul>
+      <ul className="ul_wrap">
         <li>
           <Link to="/create">
             <p className="cloud4">

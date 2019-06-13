@@ -6,9 +6,9 @@ import { weatherAction } from "../../store/actions/weatherAction";
 import GoogleMap from "./GoogleMap";
 import { compose } from "redux";
 import { firestoreConnect } from "react-redux-firebase";
-import Slider from "react-slick";
 import Notification from "../dashboard/Notification";
 import { Link } from "react-router-dom";
+import './home.scss'
 let moment = require("moment");
 
 
@@ -18,16 +18,11 @@ class Home extends Component {
   }
   render() {
     const { notifications } = this.props;
-    let SliderSettings = {
-      dots: false,
-      autoplay: true
-      // autoplaySpeed: 500
-    };
     const year = moment().year();
     const month = moment().format('MM');
     const day = moment().format('DD');
     return (
-      <React.Fragment>
+      <div>
         <div>
           今天是{year}年{month}月{day}日
         </div>
@@ -38,58 +33,46 @@ class Home extends Component {
           alt=""
         />
         {/* <GoogleMap /> */}
-        <Slider {...SliderSettings}>
-          <div>
-            <img src="http://fakeimg.pl/440x300/282828/EAE0D0/?text=1" />
-          </div>
-          <div>
-            <img src="http://fakeimg.pl/440x300/282828/EAE0D0/?text=2" />
-          </div>
-          <div>
-            <img src="http://fakeimg.pl/440x300/282828/EAE0D0/?text=3" />
-          </div>
-          <div>
-            <img src="http://fakeimg.pl/440x300/282828/EAE0D0/?text=4" />
-          </div>
-        </Slider>
-        <h5>
-          來源:
+        <div className="about_us">
+          <h5>
+            來源:
           <p>{!!this.props.aboutUs && this.props.aboutUs[0].how}</p>
-          <img
-            src={this.props.aboutUs ? this.props.aboutUs[0].image1 : undefined}
-            alt=""
-          />
-        </h5>
-        <h5>
-          歷史:
+            <img
+              src={this.props.aboutUs ? this.props.aboutUs[0].image1 : undefined}
+              alt=""
+            />
+          </h5>
+          <h5>
+            歷史:
           <p>{!!this.props.aboutUs && this.props.aboutUs[0].original}</p>
-          <img
-            src={this.props.aboutUs ? this.props.aboutUs[0].image2 : undefined}
-            alt=""
-          />
-        </h5>
-        <h5>
-          什麼:
+            <img
+              src={this.props.aboutUs ? this.props.aboutUs[0].image2 : undefined}
+              alt=""
+            />
+          </h5>
+          <h5>
+            什麼:
           <p>{!!this.props.aboutUs && this.props.aboutUs[0].what}</p>
-          <img
-            src={this.props.aboutUs ? this.props.aboutUs[0].image3 : undefined}
-            alt=""
-          />
-        </h5>
+            <img
+              src={this.props.aboutUs ? this.props.aboutUs[0].image3 : undefined}
+              alt=""
+            />
+          </h5>
+        </div>
         {/* <GoogleMap /> */}
           <Notification notifications={notifications} />
           <h5 >click me to make a review</h5>
         <Link to="/create">I WANT TO MAKE REVIEW</Link>
-      </React.Fragment>
+      </div>
     );
   }
 }
 
-const mapStateToPros = state => {
+const mapStateToPros = (state) => {
   return {
     weather: state.weather,
     aboutUs: state.firestore.ordered.aboutus,
-    notifications: state.firestore.ordered.notifications
+    notifications: state.firestore.ordered.notifications, 
   };
 };
 

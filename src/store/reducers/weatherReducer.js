@@ -1,6 +1,4 @@
-const initState = {
-  
-};
+const initState = {};
 const weatherReducer = (state = initState, action) => {
   switch (action.type) {
     case "GET_WEATHER":
