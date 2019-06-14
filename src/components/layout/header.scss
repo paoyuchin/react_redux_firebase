@@ -1,11 +1,30 @@
+* {
+  outline: 1px solid red;
+}
+
 .navigation_bar {
-  background-image: url(http://katofarm-f.jp/images/assets/bg-header-sky.png);
+  &.navigation_innerpage_bar {
+    background-image: url(http://katofarm-f.jp/images/assets/bg-header-sky.png) !important;
+    background-repeat: repeat-x;
+    background-position: 0 0;
+    height: 248px;
+    &:after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 40px;
+      background: url("http://katofarm-f.jp/svg/bg-index-rice.svg");
+      background-repeat: repeat-x;
+      left: 0;
+      bottom: 0;
+    }
+  }
+  background-image: url(http://katofarm-f.jp/images/assets/bg-index-mainvisual.png);
   background-size: 2000px auto;
   background-repeat: no-repeat;
   background-position: top;
   position: relative;
   height: 820px;
-
   background-size: 2000px auto;
   background-repeat: no-repeat;
   background-position: top;
@@ -34,7 +53,6 @@
       border-radius: 50%;
       background-color: white;
     }
-
     &:before {
       content: "";
       position: absolute;

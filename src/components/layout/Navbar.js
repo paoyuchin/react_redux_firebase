@@ -23,42 +23,46 @@ class Navbar extends Component {
       // autoplaySpeed: 500
     };
     return (
-      <div className="navigation_bar">
+      <div
+        className={
+          currentUrl === "/" ? "navigation_bar" : "navigation_bar navigation_innerpage_bar"
+        }
+      >
         <Link to="/">
           <p class="cloud1">
             Home
-          <img src="http://katofarm-f.jp/svg/logo.svg" alt="logo" />
+            <img src="http://katofarm-f.jp/svg/logo.svg" alt="logo" />
           </p>
         </Link>
         <Link to="/products">
           <span class="cloud2">
             PRODUCT
-          <div className="grass_img" />
+            <div className="grass_img" />
           </span>
         </Link>
         <Link to="/Dashboard">
           <span class="cloud3">
             REVIEWS
-          <div className="note_img" />
+            <div className="note_img" />
           </span>
         </Link>
         {link}
         {
-        // <Slider {...SliderSettings}>
-        //   <div>
-        //     <img src="http://fakeimg.pl/440x300/282828/EAE0D0/?text=1" />
-        //   </div>
-        //   <div>
-        //     <img src="http://fakeimg.pl/440x300/282828/EAE0D0/?text=2" />
-        //   </div>
-        //   <div>
-        //     <img src="http://fakeimg.pl/440x300/282828/EAE0D0/?text=3" />
-        //   </div>
-        //   <div>
-        //     <img src="http://fakeimg.pl/440x300/282828/EAE0D0/?text=4" />
-        //   </div>
-        // </Slider>
-      }
+          // <Slider {...SliderSettings}>
+          //   <div>
+          //     <img src="http://fakeimg.pl/440x300/282828/EAE0D0/?text=1" />
+          //   </div>
+          //   <div>
+          //     <img src="http://fakeimg.pl/440x300/282828/EAE0D0/?text=2" />
+          //   </div>
+          //   <div>
+          //     <img src="http://fakeimg.pl/440x300/282828/EAE0D0/?text=3" />
+          //   </div>
+          //   <div>
+          //     <img src="http://fakeimg.pl/440x300/282828/EAE0D0/?text=4" />
+          //   </div>
+          // </Slider>
+        }
       </div>
     );
   }
