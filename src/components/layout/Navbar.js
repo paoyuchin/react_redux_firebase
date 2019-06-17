@@ -3,9 +3,10 @@ import { Link, withRouter } from "react-router-dom";
 import SignedInLinks from "./SignedInLink";
 import SignedOutLinks from "./SingedOutLink";
 import "../../index";
-import Slider from "react-slick";
 import { connect } from "react-redux";
 import "./header.scss";
+import "../common.scss";
+
 
 class Navbar extends Component {
 
@@ -19,13 +20,15 @@ class Navbar extends Component {
       );
     const SliderSettings = {
       dots: false,
-      autoplay: true
+      autoplay: true,
       // autoplaySpeed: 500
     };
     return (
       <div
         className={
-          currentUrl === "/" ? "navigation_bar" : "navigation_bar navigation_innerpage_bar"
+          currentUrl === "/"
+            ? "navigation_bar"
+            : "navigation_bar navigation_innerpage_bar"
         }
       >
         <Link to="/">
@@ -47,22 +50,6 @@ class Navbar extends Component {
           </span>
         </Link>
         {link}
-        {
-          // <Slider {...SliderSettings}>
-          //   <div>
-          //     <img src="http://fakeimg.pl/440x300/282828/EAE0D0/?text=1" />
-          //   </div>
-          //   <div>
-          //     <img src="http://fakeimg.pl/440x300/282828/EAE0D0/?text=2" />
-          //   </div>
-          //   <div>
-          //     <img src="http://fakeimg.pl/440x300/282828/EAE0D0/?text=3" />
-          //   </div>
-          //   <div>
-          //     <img src="http://fakeimg.pl/440x300/282828/EAE0D0/?text=4" />
-          //   </div>
-          // </Slider>
-        }
       </div>
     );
   }
@@ -76,5 +63,4 @@ const mapStateToProps = (state,  ownprops) => {
   };
 };
 
-// export default connect(mapStateToProps)(Navbar);
 export default withRouter(connect(mapStateToProps)(Navbar));

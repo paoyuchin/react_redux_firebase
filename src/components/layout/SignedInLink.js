@@ -7,32 +7,15 @@ import { signOut } from "../../store/actions/authAction";
 const SignedInLinks = props => {
   return (
     <React.Fragment>
-      <ul className="ul_wrap">
-        <li>
-          <Link to="/create">
-            <p className="cloud4">
-              NEW PROJECT
-              <div className="grassimg" />
-            </p>
-          </Link>
-        </li>
-        <li>
-          <a onClick={props.signOut}>LOG OUT(登出)</a>
-        </li>
-        <li className="sun">
+      <ul>
+        <p className="cloud4">
           Hello, {props.profile.initials}{" "}
           {props.displayName && props.displayName}
-          <div className="sunbeams">
-            <div className="beam beam1" />
-            <div className="beam beam2" />
-            <div className="beam beam3" />
-            <div className="beam beam4" />
-            <div className="beam beam5" />
-            <div className="beam beam6" />
-            <div className="beam beam7" />
-            <div className="beam beam8" />
-          </div>
-        </li>
+          <a onClick={props.signOut}>
+            LOG OUT(登出)
+            <div className="grassimg" />
+          </a>
+        </p>
       </ul>
     </React.Fragment>
   );
@@ -45,3 +28,14 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(null,mapDispatchToProps)(SignedInLinks);
+
+
+      // <li>
+      //     <Link to="/create">
+      //       <p className="cloud4">
+      //         NEW PROJECT
+      //         <div className="grassimg" />
+      //       </p>
+      //     </Link>
+      //   </li>
+      //   <li>

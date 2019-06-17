@@ -1,27 +1,29 @@
 export const signIn = (credentials) => {
     return (dispatch, getState, {
-        getFirebase
-    }) => {
+            getFirebase,
+            getFirestore
+        }) => {
         const firebase = getFirebase();
         firebase
             .auth()
-            .signInWithEmailAndPassword(credentials.email, credentials.password).then(() => {
-                dispatch({
-                    type: 'LOGIN_SUCCESS'
+                .signInWithEmailAndPassword(credentials.email, credentials.password).then(() => {
+                    dispatch({
+                        type: 'LOGIN_SUCCESS'
+                    })
+                }).catch((err) => {
+                    dispatch({
+                        type: 'LOGIN_FAILED',
+                        err
+                    })
                 })
-            }).catch((err) => {
-                dispatch({
-                    type: 'LOGIN_FAILED',
-                    err
-                })
-            })
     }
 }
 
 export const signOut = () => {
     return (dispatch, getState, {
-        getFirebase
-    }) => {
+            getFirebase,
+            getFirestore
+        }) => {
         const firebase = getFirebase();
         firebase.auth().signOut().then(() => {
             dispatch({
@@ -32,10 +34,10 @@ export const signOut = () => {
 };
 
 export const signUp = (newUser) => {
-    return (dispatch, {
-        getFirebase,
-        getFirestore
-    }) => {
+    return (dispatch, getState, {
+            getFirebase,
+            getFirestore
+        }) => {
         const firebase = getFirebase();
         const firestore = getFirestore();
         firebase
