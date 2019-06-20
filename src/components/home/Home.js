@@ -10,7 +10,6 @@ import Notification from "../dashboard/Notification";
 import { Link } from "react-router-dom";
 import "./home.scss";
 import "../common.scss";
-// import Carousel from "nuka-carousel";
 
 let moment = require("moment");
 
@@ -25,20 +24,6 @@ class Home extends Component {
     const day = moment().format("DD");
     return (
       <div className="home">
-        {/* <div className="slider_wrap" style={{ width: "65%", margin: "auto" }}>
-          <Carousel
-            autoplay={true}
-            autoplayInterval={1000}
-            autoGenerateStyleTag={true}
-          >
-            <img src="http://fakeimg.pl/440x300/282828/EAE0D0/?text=1" />
-            <img src="http://fakeimg.pl/440x300/282828/EAE0D0/?text=2" />
-            <img src="http://fakeimg.pl/440x300/282828/EAE0D0/?text=3" />
-            <img src="http://fakeimg.pl/440x300/282828/EAE0D0/?text=4" />
-            <img src="http://fakeimg.pl/440x300/282828/EAE0D0/?text=5" />
-            <img src="http://fakeimg.pl/440x300/282828/EAE0D0/?text=6 " />
-          </Carousel>
-        </div> */}
         {/* <div>
           今天是{year}年{month}月{day}日
         </div>
@@ -130,11 +115,11 @@ class Home extends Component {
           <img src="http://katofarm-f.jp/images/assets/about-illust-map.png" alt=""/>
           <GoogleMap />          
         </dvi>
-        <div className="announce">
+        {/* <div className="announce">
           <span>來寫評論喔！</span>
             <Link to="/create"></Link>
             <img src="https://michinoeki.kyoto.jp/wp-content/themes/sosimple/img/micchi.png" alt=""/>
-        </div>
+        </div> */}
       </div>
     )
   }
@@ -166,6 +151,3 @@ export default compose(
 )(Home);
 
 // https://github.com/FormidableLabs/nuka-carousel
-
-
-

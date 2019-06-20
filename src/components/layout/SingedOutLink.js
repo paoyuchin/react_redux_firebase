@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 const SignedOutLinks = () => {
   return (
     <React.Fragment>
-      <div className="cloud4">
-        <div className="grassimg" />
+      <div>
         <li>Hello, 你還沒登入喔!</li>
         <Link to="/signin">
           <span>SIGN IN(登入)</span>
