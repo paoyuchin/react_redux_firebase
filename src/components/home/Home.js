@@ -23,7 +23,7 @@ class Home extends Component {
     const month = moment().format("MM");
     const day = moment().format("DD");
     return (
-      <div className="home">
+      <div className="home body_body_color">
         {/* <div>
           今天是{year}年{month}月{day}日
         </div>
@@ -34,28 +34,115 @@ class Home extends Component {
           alt=""
         /> */}
         {/* <GoogleMap /> */}
+        {/* 1 */}
+        <div className="title_begin">
+          <p className="title_begin_2">
+            安心安全、ちいさな子どもから食べられる作物づくり。
+          </p>
+        </div>
+        <div className="anounce fixed_size clearfix">
+          <div className="col-lg-3 col-md-4 col-sm-6 mb-4 float-left">
+            <div className="card">
+              <img
+                src="https://haranoujyo.com/assets/img/top/strengths_01.svg"
+                alt=""
+              />
+              <h3>歴史ある無農薬・無化学肥料</h3>
+              <p>35年間無農薬、無化学肥での栽培方法を続けております。</p>
+            </div>
+          </div>
+          <div className="col-lg-3 col-md-4 col-sm-6 mb-4 float-left">
+            <div className="card">
+              <img
+                src="https://haranoujyo.com/assets/img/top/strengths_01.svg"
+                alt=""
+              />
+              <h3>歴史ある無農薬・無化学肥料</h3>
+              <p>35年間無農薬、無化学肥での栽培方法を続けております。</p>
+            </div>
+          </div>
+          <div className="col-lg-3 col-md-4 col-sm-6 mb-4 float-left">
+            <div className="card">
+              <img
+                src="https://haranoujyo.com/assets/img/top/strengths_01.svg"
+                alt=""
+              />
+              <h3>歴史ある無農薬・無化学肥料</h3>
+              <p>35年間無農薬、無化学肥での栽培方法を続けております。</p>
+            </div>
+          </div>
+          <div className="col-lg-3 col-md-4 col-sm-6 mb-4 float-left">
+            <div className="card">
+              <img
+                src="https://haranoujyo.com/assets/img/top/strengths_01.svg"
+                alt=""
+              />
+              <h3>歴史ある無農薬・無化学肥料</h3>
+              <p>35年間無農薬、無化学肥での栽培方法を続けております。</p>
+            </div>
+          </div>
+          <div className="col-lg-3 col-md-4 col-sm-6 mb-4 float-left">
+            <div className="card">
+              <img
+                src="https://haranoujyo.com/assets/img/top/strengths_01.svg"
+                alt=""
+              />
+              <h3>歴史ある無農薬・無化学肥料</h3>
+              <p>35年間無農薬、無化学肥での栽培方法を続けております。</p>
+            </div>
+          </div>
+          <div className="col-lg-3 col-md-4 col-sm-6 mb-4 float-left">
+            <div className="card">
+              <img
+                src="https://haranoujyo.com/assets/img/top/strengths_01.svg"
+                alt=""
+              />
+              <h3>歴史ある無農薬・無化学肥料</h3>
+              <p>35年間無農薬、無化学肥での栽培方法を続けております。</p>
+            </div>
+          </div>
+          <div className="col-lg-3 col-md-4 col-sm-6 mb-4 float-left">
+            <div className="card">
+              <img
+                src="https://haranoujyo.com/assets/img/top/strengths_01.svg"
+                alt=""
+              />
+              <h3>歴史ある無農薬・無化学肥料</h3>
+              <p>35年間無農薬、無化学肥での栽培方法を続けております。</p>
+            </div>
+          </div>
+          <div className="col-lg-3 col-md-4 col-sm-6 mb-4 float-left">
+            <div className="card">
+              <img
+                src="https://haranoujyo.com/assets/img/top/strengths_01.svg"
+                alt=""
+              />
+              <h3>歴史ある無農薬・無化学肥料</h3>
+              <p>35年間無農薬、無化学肥での栽培方法を続けております。</p>
+            </div>
+          </div>
+        </div>
         <div className="title_begin">
           <p className="title_begin_1">
             \我的養生之道就是盡量吃「真正」的食物/
           </p>
           <p className="title_begin_2">我對食物的堅持＿只吃最簡單的食物</p>
         </div>
-        <div className="intro_about_us clearfix">
-          <div className="about_us_img">
+        <div className="clearfix fixed_size family_intro">
+          <div className="family_img col-sm-6 float-left">
             <img
               src={
-                this.props.aboutUs
-                  ? this.props.aboutUs[0].image1
-                  : undefined
+                this.props.aboutUs ? this.props.aboutUs[0].image1 : undefined
               }
               alt=""
             />
           </div>
-          <p className="about_us_history">
+          <p className="family_content col-sm-6 float-left">
             {!!this.props.aboutUs && this.props.aboutUs[0].how}
           </p>
         </div>
-        <div className="intro_how">
+        {/* 3 產品*/}
+        <div className="intro_product">
           <div className="title_begin">
             <p className="title_begin_1">
               \發自內心的真誠，以客戶需求為第一優先 /
@@ -64,69 +151,77 @@ class Home extends Component {
               提供最佳品質與完善服務為第一項目，並提升品牌的能見度，達到永續經營的目標。
             </p>
           </div>
-          <div className="intro_how_content">
-            <p className="intro_how_title">{!!this.props.aboutUs && this.props.aboutUs[0].what}</p>
-            <p className="intro_how_title">{!!this.props.aboutUs && this.props.aboutUs[0].what2}</p>
-            <p className="intro_how_title">{!!this.props.aboutUs && this.props.aboutUs[0].what3}</p>
+          <div className="product_box">
+            <div className="col-md-4 product">
+              <img
+                src="https://haranoujyo.com/wp/wp-content/uploads/2019/01/01_%E9%9B%91%E7%A9%80%E7%95%91.jpg"
+                alt=""
+              />
+              <p>提供最佳品質與完善服務為第一項目</p>
+            </div>
+            <div className="col-md-4 product">
+              <img
+                src="https://haranoujyo.com/wp/wp-content/uploads/2019/01/01_%E9%9B%91%E7%A9%80%E7%95%91.jpg"
+                alt=""
+              />
+              <p>提供最佳品質與完善服務為第一項目</p>
+            </div>
+            <div className="col-md-4 product">
+              <img
+                src="https://haranoujyo.com/wp/wp-content/uploads/2019/01/01_%E9%9B%91%E7%A9%80%E7%95%91.jpg"
+                alt=""
+              />
+              <p>提供最佳品質與完善服務為第一項目</p>
+            </div>
           </div>
-          <div className="intro_how_imgwrap">
-            <img
-              src={
-                this.props.aboutUs ? this.props.aboutUs[0].image3 : undefined
-              }
-              alt=""
-            />
+          <div className="see_more">
+            <Link className="click_to" to="/products">
+              看更多產品 >>>
+            </Link>
           </div>
-          <div className="intro_how_content">
-            <p className="intro_how_title">{!!this.props.aboutUs && this.props.aboutUs[0].original}</p>
-            <p className="intro_how_title">{!!this.props.aboutUs && this.props.aboutUs[0].original2}</p>
-            <p className="intro_how_title">{!!this.props.aboutUs && this.props.aboutUs[0].original3}</p>
-            <img
-              src={
-                this.props.aboutUs
-                  ? this.props.aboutUs[0].image2
-                  : undefined
-              }
-              alt=""
-            />
-          </div>
-            <Link className="click_to" to="/products">看更多產品 >>></Link>
         </div>
         <div className="intro_notification">
           <div className="title_begin">
-            <p className="title_begin_1">
-              \大家的回饋使我們進步的/
-          </p>
-            <p className="title_begin_2">用心與最專業的態度</p>
+            <p className="title_begin_1">最新留言推波區</p>
           </div>
           <div className="intro_notification_content">
-            {notifications && notifications.map((item) => (
-              <div className="notification_list">
-                <span className="action_time">{moment(item.time.toDate()).fromNow()}</span>
-                <span className="username">{item.user} </span>
-                <span className="action">{item.content} </span>
-                
-              </div>
-            ))}
-            <Link className="click_to" to="/Dashboard">來看看大家寫的評論吧</Link>              
+            {notifications &&
+              notifications.map(item => (
+                <div className="notification_list">
+                  <span className="action_time">
+                    {moment(item.time.toDate()).fromNow()}
+                  </span>
+                  <span className="username">{item.user} </span>
+                  <span className="action">{item.content} </span>
+                </div>
+              ))}
+            <Link className="click_to" to="/Dashboard">
+              來看看大家寫的評論吧
+            </Link>
           </div>
         </div>
         <dvi className="intro_googlemap">
-          <img src="http://katofarm-f.jp/images/assets/about-illust-map.png" alt=""/>
-          <GoogleMap />          
+          <div className="googlemap_wrap">
+            <img
+              className="google_map_plant"
+              src="http://katofarm-f.jp/images/assets/about-illust-map.png"
+              alt=""
+            />
+            <GoogleMap />
+          </div>
         </dvi>
-        {/* <div className="announce">
+        <div className="announce">
           <span>來寫評論喔！</span>
             <Link to="/create"></Link>
             <img src="https://michinoeki.kyoto.jp/wp-content/themes/sosimple/img/micchi.png" alt=""/>
-        </div> */}
+        </div>
       </div>
-    )
+    );
   }
 }
 
 const mapStateToPros = state => {
-  return {  
+  return {
     weather: state.weather,
     aboutUs: state.firestore.ordered.aboutus,
     notifications: state.firestore.ordered.notifications
@@ -146,7 +241,7 @@ export default compose(
   ),
   firestoreConnect([
     { collection: "aboutus" },
-    { collection: "notifications", limit:6, orderBy: ["time", "desc"] }
+    { collection: "notifications", limit: 6, orderBy: ["time", "desc"] }
   ])
 )(Home);
 

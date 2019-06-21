@@ -19,21 +19,18 @@ class Navbar extends Component {
     ) : (
         <SignedOutLinks />
       );
-    const header = currentUrl === "/" ? <IndexHeader /> : <InsideHeader/>
+    const header = currentUrl === "/" ? <IndexHeader /> : <InsideHeader currentUrl={currentUrl} />
     return (
-      <div>
+      <div className="nav_link inside_header body_body_color">
         {header}
         <Link to="/">
-            Home
-            <img src="http://katofarm-f.jp/svg/logo.svg" alt="logo" />
+          <span>Home</span>
         </Link>
         <Link to="/products">
-            PRODUCT
-            <div className="grass_img" />
+          <span>PRODUCT</span>
         </Link>
         <Link to="/Dashboard">
-            REVIEWS
-            <div className="note_img" />
+          <span>REVIEWS</span>
         </Link>
         {link}
       </div>

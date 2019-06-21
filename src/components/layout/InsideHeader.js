@@ -1,8 +1,34 @@
 import React from "react";
 import "../common.scss";
-const InsideHeader = () => {
-    return <div className="InsideHeader" />;
-};
+class InsideHeader extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  pageName = currentUrl => {
+      console.log(6666, "currentUrl", currentUrl);
+    switch (currentUrl) {
+      case "/products":
+        return "產品介紹";
+        break;
+      case "/Dashboard":
+        return '產品留言板'
+      case "/signin":
+        return '登入頁面'
+        break;
+      case '/signup':
+        return '註冊'
+      default:
+        console.log("sorry something wrong");
+    }
+  };
+  render() {
+    return (
+      <div className="InsideHeader">
+        <div>{this.pageName(this.props.currentUrl)}</div>
+      </div>
+    );
+  }
+}
 
 export default InsideHeader;
 

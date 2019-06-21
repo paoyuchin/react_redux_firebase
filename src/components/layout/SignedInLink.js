@@ -7,14 +7,11 @@ import { signOut } from "../../store/actions/authAction";
 const SignedInLinks = props => {
   return (
     <React.Fragment>
-      <ul>
-          Hello, {props.profile.initials}{" "}
+          Hello, {props.profile.initials}
           {props.displayName && props.displayName}
-          <a onClick={props.signOut}>
+          <span className="sign_out" onClick={props.signOut}>
             LOG OUT(登出)
-            <div />
-          </a>
-      </ul>
+          </span>
     </React.Fragment>
   );
 };
