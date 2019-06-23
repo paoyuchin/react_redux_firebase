@@ -19,7 +19,7 @@
   .click_to {
     text-decoration: none;
     padding: 10px;
-    width: 400px;
+    width: 220px;
     margin-top: 15px;
     border-radius: 5px;
     display: inline-block;
@@ -128,8 +128,7 @@
   }
   .intro_notification {
     padding: 0px 0 137px;
-    background: #e4e1d9 url(http://katofarm-f.jp/svg/bg-index-news-bottom.svg)
-      repeat-x 50% 100%;
+
     .intro_notification_content {
       max-width: 1000px;
       text-align: left;
@@ -160,6 +159,7 @@
     display: inline-block;
     padding: 40px 0;
     height: 70vh;
+    background-color: #BBB39F;
     .googlemap_wrap {
       position: relative;
       .google_map_plant {
@@ -167,7 +167,9 @@
         top: 0;
         right: 0;
         bottom: 0;
-        left: 500px;
+        left: 0;
+        margin-left: auto;
+        margin-right: auto;
       }
       .Googlemap {
         width: 70%;
@@ -175,7 +177,7 @@
         margin-left: auto;
         margin-right: auto;
         position: relative;
-        top: 50px;
+        top: 48px;
         right: 0;
         bottom: 0;
         left: 0;
@@ -186,20 +188,40 @@
 }
 
 .card {
+  border: none;
   background-color: inherit;
+  h3{
+    text-align: center;
+    line-height: 1.36364;
+    color: #FF9641;
+  }
 }
 .intro_product {
   width: 100%;
   .product_box {
     .product {
       display: inline-block;
-      padding: 0 3px 0 3px;
-      img {
+      padding: 0 ;
+      .product_img {
         width: 100%;
       }
+      &:nth-child(1) {
+        border-right: solid 1px #E6E6E6;
+      }
+      &:nth-child(2){
+        border-right:solid 1px #E6E6E6;
+      }
+    }
+    .product_icon{
+      width: 30px;
+      height: 30px;
+      margin: 15px;
+    }
+    .product_1{
+      position: relative;
     }
   }
-}
+  }
 
 
 .family_intro{

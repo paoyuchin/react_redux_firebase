@@ -169,12 +169,21 @@
 
 .InsideHeader {
   background-image: url(https://haranoujyo.com/assets/img/news_archive/ttl_bg.jpg);
-  background-repeat: repeat-x;
-  background-position: 0 0;
-  height: 248px;
-  background-size: 2000px auto;
-  background-position: top;
-  position: relative;
+    background-position: 0 0;
+    height: 352px;
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    .inside_title{
+      color: white;
+      padding:30px 60px;
+      background-color: rgba(255, 256, 232, 0.4)
+    }
 }
 
 .IndexHeader {

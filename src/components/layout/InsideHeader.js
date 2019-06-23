@@ -24,7 +24,7 @@ class InsideHeader extends React.Component {
   render() {
     return (
       <div className="InsideHeader">
-        <div>{this.pageName(this.props.currentUrl)}</div>
+        <h1 className="inside_title">{this.pageName(this.props.currentUrl)}</h1>
       </div>
     );
   }

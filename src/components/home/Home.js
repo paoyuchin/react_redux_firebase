@@ -132,7 +132,9 @@ class Home extends Component {
           <div className="family_img col-sm-6 float-left">
             <img
               src={
-                this.props.aboutUs ? this.props.aboutUs[0].image1 : undefined
+                this.props.aboutUs
+                  ? this.props.aboutUs[0].image1
+                  : undefined
               }
               alt=""
             />
@@ -141,6 +143,7 @@ class Home extends Component {
             {!!this.props.aboutUs && this.props.aboutUs[0].how}
           </p>
         </div>
+        <div className="bgc"></div>
         {/* 3 產品*/}
         <div className="intro_product">
           <div className="title_begin">
@@ -154,24 +157,48 @@ class Home extends Component {
           <div className="product_box">
             <div className="col-md-4 product">
               <img
+                className="product_img"
                 src="https://haranoujyo.com/wp/wp-content/uploads/2019/01/01_%E9%9B%91%E7%A9%80%E7%95%91.jpg"
                 alt=""
               />
-              <p>提供最佳品質與完善服務為第一項目</p>
+              <span className="product_1">
+                <img
+                  className="product_icon"
+                  src="https://haranoujyo.com/assets/img/common/rank_01.svg"
+                  alt=""
+                />
+                提供最佳品質與完善服務為第一項目
+              </span>
             </div>
             <div className="col-md-4 product">
               <img
+                className="product_img"
                 src="https://haranoujyo.com/wp/wp-content/uploads/2019/01/01_%E9%9B%91%E7%A9%80%E7%95%91.jpg"
                 alt=""
               />
-              <p>提供最佳品質與完善服務為第一項目</p>
+              <span className="product_1">
+                <img
+                  className="product_icon"
+                  src="https://haranoujyo.com/assets/img/common/rank_02.svg"
+                  alt=""
+                />
+                提供最佳品質與完善服務為第一項目
+              </span>
             </div>
             <div className="col-md-4 product">
               <img
+                className="product_img"
                 src="https://haranoujyo.com/wp/wp-content/uploads/2019/01/01_%E9%9B%91%E7%A9%80%E7%95%91.jpg"
                 alt=""
               />
-              <p>提供最佳品質與完善服務為第一項目</p>
+              <span className="product_1">
+                <img
+                  className="product_icon"
+                  src="https://haranoujyo.com/assets/img/common/rank_03.svg"
+                  alt=""
+                />
+                提供最佳品質與完善服務為第一項目
+              </span>
             </div>
           </div>
           <div className="see_more">
@@ -201,6 +228,7 @@ class Home extends Component {
           </div>
         </div>
         <dvi className="intro_googlemap">
+        <p>我們在這裡</p>
           <div className="googlemap_wrap">
             <img
               className="google_map_plant"
@@ -212,8 +240,11 @@ class Home extends Component {
         </dvi>
         <div className="announce">
           <span>來寫評論喔！</span>
-            <Link to="/create"></Link>
-            <img src="https://michinoeki.kyoto.jp/wp-content/themes/sosimple/img/micchi.png" alt=""/>
+          <Link to="/create" />
+          <img
+            src="https://michinoeki.kyoto.jp/wp-content/themes/sosimple/img/micchi.png"
+            alt=""
+          />
         </div>
       </div>
     );

@@ -3,6 +3,7 @@ import "../../index";
 import "../../config/fbConfig";
 import firebase from "firebase/app";
 import { connect } from "react-redux";
+import './product.scss';
 
 class ProjectDetails extends React.Component {
   constructor(props) {
@@ -15,12 +16,14 @@ class ProjectDetails extends React.Component {
       this.createImageUrlFromFirebase(this.props.product.imageName);
   }
   createImageUrlFromFirebase = imageName => {
+    console.log('imageName', imageName)
     var storage = firebase.storage();
     var storageRef = storage.ref();
     storageRef
       .child(`${imageName}.jpg`)
       .getDownloadURL()
       .then(url => {
+        console.log('url', url)
         this.setState({
           imageURL: url
         });
