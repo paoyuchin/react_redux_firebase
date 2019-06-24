@@ -13,18 +13,17 @@ import ProductsSummary from "../products/productsSummary";
 import { link } from "fs";
 import "../../config/fbConfig";
 
+
 class Products extends React.Component {
   render() {
     const { products } = this.props;
     return (
-      <div className="ProjectList">
+      <div className="product_list fixed_size">
         {products &&
           products.map(product => {
             return (
-              <Link to={"/products/" + product.id} key={product.id}>
-                <div className="products">
+              <Link  className="product float-left" to={"/products/" + product.id} key={product.id}>
                   <ProductsSummary product={product} />
-                </div>
               </Link>
             );
           })}

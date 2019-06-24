@@ -1,6 +1,142 @@
-.pic{
-  width: 50px;
-  height: 50px;
+@keyframes bubble {
+  0% {
+    border-radius: 40% 60% 40% 60% / 40% 40% 60% 60%;
+  }
+
+  25% {
+    border-radius: 55% 45% 60% 40% / 50% 65% 35% 50%;
+  }
+
+  50% {
+    border-radius: 38% 62% 43% 57% / 40% 50% 50% 60%;
+  }
+
+  75% {
+    border-radius: 40% 60% 55% 45% / 55% 37% 63% 45%;
+  }
+
+  100% {
+    border-radius: 45% 55% 65% 35% / 43% 40% 60% 57%;
+  }
 }
 
 
+.product_list {
+  width: 100%;
+  margin-top: 70px;
+  background: url(http://michikiri.com/img/common/bg_pattern_01.png);
+      padding: 28px 20px 60px;
+
+  .product {
+    width: 50%;
+    height: 300px;
+    padding: 20px;
+    width: 50%;
+    height: 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: inherit;
+    text-decoration: none;
+  }
+
+  .left {
+    width: 50%;
+    display: inline-block;
+
+    .img_wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 260px;
+      position: relative;
+
+      &:nth-of-type(2n):before {
+        animation: bubble 3s -4s linear infinite alternate;
+      }
+
+      &:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 1px solid rgba(0, 0, 0, .4);
+        border-radius: 62% 38% 54% 46% / 43% 24% 76% 57%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        animation: bubble -4s 0s linear infinite alternate;
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 1px solid rgba(0, 0, 0, .4);
+        border-radius: 62% 38% 54% 46% / 43% 24% 76% 57%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        animation: bubble 4s 0s linear infinite alternate;
+      }
+
+      img {
+        width: 100%;
+        border-radius: 50%;
+        vertical-align: bottom;
+        width: 100%;
+        width: 280px;
+        height: 280px;
+      }
+    }
+  }
+
+  .right {
+    width: 50%;
+    display: inline-block;
+    position: relative;
+
+    .product_number {
+      position: absolute;
+      top: -61px;
+      left: -53px;
+      width: 78px;
+      height: 68px;
+      background: url(http://michikiri.com/img/common/icon_balloon_01.png) no-repeat left top;
+      background-size: 78px auto;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+      font-size: 20px;
+      line-height: 68px;
+    }
+
+    .product_name {
+      display: inline;
+      font-size: 18px;
+      font-weight: bold;
+      background: url(http://michikiri.com/img/common/bg_link_01.png) no-repeat bottom;
+      background-size: 100% auto;
+      padding: 17px 16px 10px 0;
+      line-height: 1.7;
+      opacity: 1;
+      color: black;
+    }
+
+    .product_content {
+      margin-top: 5px;
+      padding: 15px;
+      color: black;
+      font-weight: normal;
+
+      &:hover {
+        text-decoration: underline !important;
+
+      }
+    }
+  }
+}

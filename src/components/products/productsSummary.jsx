@@ -3,7 +3,8 @@ import "../../index";
 import "../../config/fbConfig";
 import firebase from "firebase/app";
 import { connect } from "react-redux";
-import './product.scss';
+import "./product.scss";
+import "../common.scss";
 
 class ProjectDetails extends React.Component {
   constructor(props) {
@@ -13,17 +14,17 @@ class ProjectDetails extends React.Component {
     };
   }
   componentDidMount() {
-      this.createImageUrlFromFirebase(this.props.product.imageName);
+    this.createImageUrlFromFirebase(this.props.product.imageName);
   }
   createImageUrlFromFirebase = imageName => {
-    console.log('imageName', imageName)
+    console.log("imageName", imageName);
     var storage = firebase.storage();
     var storageRef = storage.ref();
     storageRef
       .child(`${imageName}.jpg`)
       .getDownloadURL()
       .then(url => {
-        console.log('url', url)
+        console.log("url", url);
         this.setState({
           imageURL: url
         });
@@ -35,16 +36,21 @@ class ProjectDetails extends React.Component {
   render() {
     const { product } = this.props;
     return (
-      <div className="project_summary">
-        <p>productID: {product.id}</p>
-        <p>產品名字: {product.productName}</p>
-        <p>產品內容: {product.productContent}</p>
-        <p>產品價格: {product.productPrice}</p>
-        <img className="pic" src={this.state.imageURL} alt="圖片出現錯誤"/>
-      </div>
+      <React.Fragment>
+        <span className="left">
+          <div className="img_wrap">
+            <img className="img" src={this.state.imageURL} alt="圖片出現錯誤" />
+          </div>
+        </span>
+        <span className="right">
+        <p className="product_number">1</p>
+          {/* <p>productID: {product.id}</p> */}
+          <p className="product_name">{product.productName}</p>
+          <p className="product_content">{product.productContent}</p>
+        </span>
+      </React.Fragment>
     );
   }
 }
-
 
 export default ProjectDetails;
