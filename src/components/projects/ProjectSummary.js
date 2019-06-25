@@ -11,17 +11,19 @@ class ProjectSummary extends React.Component {
   render() {
     const { project } = this.props;
     return (
-      <div className="project_summary">
-        <div className="project_title">{project.title}</div>
-        <p className="project_name">{project.content}</p>
-        <div className="pic">
+      <div className="review_box">
+        <div className="post_time">
+          <div className="date">
+            <span>{moment(project.creatAt.toDate()).calendar()}</span>
+          </div>
         </div>
-        <div className="postPerson">
-          psot by: {project.authorFirstName} {project.authorLastName}
+        <div className="post">
+          <div className="review_title">{project.title}</div>
+          <p className="review_content">{project.content}</p>
+          <div className="postPerson">
+            {project.authorFirstName} {project.authorLastName}
+          </div>
         </div>
-        <p className="post_time">
-          {moment(project.creatAt.toDate()).calendar()}
-        </p>
       </div>
     );
   }

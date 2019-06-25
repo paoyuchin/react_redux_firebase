@@ -3,7 +3,7 @@ import ProjectSummary from './ProjectSummary';
 
 const ProjectList = ({ projects }) => {
   return (
-    <div className="ProjectList">
+    <div className="review_list">
       {projects &&
         projects.map((project) => (
             <ProjectSummary project={project}  />

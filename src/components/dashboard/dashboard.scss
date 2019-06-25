@@ -1,0 +1,59 @@
+.reviews {
+  width: 100%;
+  display: flex;
+  .review_list {
+    .review_box {
+      display: flex;
+      padding: 15px;
+      .post_time {
+        .date {
+          width: 60px;
+          height: 60px;
+          background: #222;
+          color: #fff;
+          padding: 0px;
+          line-height: 1;
+          padding: 15px 4px;
+          text-align: center;
+          font-weight: bold;
+        }
+      }
+      .post {
+        padding-left: 15px;
+        .review_title {
+          font-weight: bold;
+        }
+        .review_content {
+          font-size: 14px;
+        }
+        .postPerson {
+          font-style: italic;
+        }
+      }
+    }
+  }
+  .notification {
+  }
+}
+
+.notification {
+  .notification_box {
+    width: 100%;
+    .action {
+        margin-bottom: 20px;
+      .username {
+          color: lightcoral;
+          display: inline-block;
+          margin-right: 15px;
+      }
+      .action_behavior {
+          font-weight: bold;     
+               
+      }
+      .action_time {
+          font-size: 14px;
+          font-style: italic;
+      }
+    }
+  }
+}

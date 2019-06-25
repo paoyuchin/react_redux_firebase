@@ -13,20 +13,25 @@ import ProductsSummary from "../products/productsSummary";
 import { link } from "fs";
 import "../../config/fbConfig";
 
-
 class Products extends React.Component {
   render() {
     const { products } = this.props;
     return (
-      <div className="product_list fixed_size">
-        {products &&
-          products.map(product => {
-            return (
-              <Link  className="product float-left" to={"/products/" + product.id} key={product.id}>
+      <div className="product_bgc clearfix">
+        <div className="product_list fixed_size">
+          {products &&
+            products.map(product => {
+              return (
+                <Link
+                  className="product float-left"
+                  to={"/products/" + product.id}
+                  key={product.id}
+                >
                   <ProductsSummary product={product} />
-              </Link>
-            );
-          })}
+                </Link>
+              );
+            })}
+        </div>
       </div>
     );
   }
@@ -38,10 +43,7 @@ const mapStateToPros = state => {
   };
 };
 
-
 export default compose(
-  connect(
-    mapStateToPros,
-),
+  connect(mapStateToPros),
   firestoreConnect([{ collection: "products" }])
 )(Products);
