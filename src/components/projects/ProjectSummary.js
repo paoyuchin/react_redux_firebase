@@ -10,6 +10,7 @@ class ProjectSummary extends React.Component {
   }
   render() {
     const { project } = this.props;
+    console.log(1, project.creatAt)
     return (
       <div className="review_box">
         <div className="post_time">

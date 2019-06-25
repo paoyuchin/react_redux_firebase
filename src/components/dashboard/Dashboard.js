@@ -13,9 +13,11 @@ class Dashboard extends Component {
     // if (!auth.uid) return <Redirect to="/signin" />;
 
     return (
-      <div className="reviews fixed_size">
-        <ProjectList projects={projects} />
-        <Notification notifications={notifications} />
+      <div className="reviews_bgc">
+        <div className="reviews fixed_size">
+          <ProjectList projects={projects} />
+          <Notification notifications={notifications} />
+        </div>
       </div>
     );
   }

@@ -5,8 +5,10 @@ const Notification = props => {
   const { notifications } = props;
   return (
     <div className="notification">
-      <p>及時推播</p>
-      <ul className="notification_box">
+    <div className="title_img">
+        <img src="http://michikiri.com/img/top/hd_information.png" alt="" />
+    </div>
+      <span className="notification_box">
         {notifications &&
           notifications.map(item => {
             return (
@@ -19,7 +21,7 @@ const Notification = props => {
               </div>
             );
           })}
-      </ul>
+      </span>
     </div>
   );
 };
