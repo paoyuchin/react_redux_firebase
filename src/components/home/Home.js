@@ -129,7 +129,7 @@ class Home extends Component {
           <p className="title_begin_2">我對食物的堅持＿只吃最簡單的食物</p>
         </div>
         <div className="clearfix fixed_size family_intro">
-          <div className="family_img col-sm-6 float-left">
+          <div className="family_img float-left">
             <img
               src={
                 this.props.aboutUs
@@ -139,7 +139,7 @@ class Home extends Component {
               alt=""
             />
           </div>
-          <p className="family_content col-sm-6 float-left">
+          <p className="family_content float-left">
             {!!this.props.aboutUs && this.props.aboutUs[0].how}
           </p>
         </div>
@@ -227,7 +227,7 @@ class Home extends Component {
             </Link>
           </div>
         </div>
-        <dvi className="intro_googlemap">
+        <div className="intro_googlemap">
         <p>我們在這裡</p>
           <div className="googlemap_wrap">
             <img
@@ -237,15 +237,14 @@ class Home extends Component {
             />
             <GoogleMap />
           </div>
-        </dvi>
-        <div className="announce">
-          <span>來寫評論喔！</span>
-          <Link to="/create" />
-          <img
-            src="https://michinoeki.kyoto.jp/wp-content/themes/sosimple/img/micchi.png"
-            alt=""
-          />
         </div>
+        <Link className="create_commit" to="/create">
+            <span>來寫評論喔！</span>
+            <img
+              src="https://michinoeki.kyoto.jp/wp-content/themes/sosimple/img/micchi.png"
+              alt=""
+            />
+        </Link>
       </div>
     );
   }

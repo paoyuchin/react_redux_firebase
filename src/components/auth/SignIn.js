@@ -6,7 +6,7 @@ import { signIn } from "../../store/actions/authAction";
 import { signInWithGoogleAccount } from "../../store/actions/authAction";
 import { Redirect } from "react-router-dom";
 import firebase from "firebase/app";
-import "./signin.scss";
+import "./sign.scss";
 
 class SignIn extends Component {
   state = {

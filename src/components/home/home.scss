@@ -121,7 +121,7 @@
       height: 60px;
     }
   }
-  .announce {
+  .create_commit {
     position: fixed;
     bottom: 0;
     right: 0;
@@ -158,7 +158,7 @@
     max-height: 600px;
     display: inline-block;
     padding: 40px 0;
-    height: 70vh;
+    height: 100vh;
     background-color: #BBB39F;
     .googlemap_wrap {
       position: relative;
@@ -172,7 +172,7 @@
         margin-right: auto;
       }
       .Googlemap {
-        width: 70%;
+        width: calc(100% - 50px);
         height: 50vh;
         margin-left: auto;
         margin-right: auto;
@@ -227,9 +227,27 @@
 .family_intro{
   .family_img{
     width: 50%;
+    img{
+      width: 100%;
+      border-radius: 50%;
+    }
   }
   .family_content{
     width: 50%;
   }
 }
 
+
+
+// media query
+@media (max-width: 768px) { 
+.family_intro{
+  .family_img{
+    width: 100%;
+  }
+  .family_content{
+    width: 100%;
+  }
+}
+
+}

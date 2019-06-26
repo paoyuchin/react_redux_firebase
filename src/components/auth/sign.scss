@@ -19,15 +19,14 @@
       color: #737373;
       border-radius: 5px;
       white-space: nowrap;
-      box-shadow:3px 1px 13px 9px rgba(0, 0, 0, 0.05);
-      transition-property: background-color,
-        box-shadow;
+      box-shadow: 3px 1px 13px 9px rgba(0, 0, 0, 0.05);
+      transition-property: background-color, box-shadow;
       transition-duration: 150ms;
       transition-timing-function: ease-in-out;
       padding: 0;
-&:hover{
-      box-shadow: 1px 4px 5px 1px rgba(0, 0, 0, 0.1);
-}
+      &:hover {
+        box-shadow: 1px 4px 5px 1px rgba(0, 0, 0, 0.1);
+      }
       .google-button__icon {
         display: inline-block;
         vertical-align: middle;
@@ -43,10 +42,30 @@
         padding: 0 24px;
         font-size: 14px;
         font-weight: bold;
-        font-family: 'Roboto',
-          arial,
-          sans-serif;
+        font-family: "Roboto", arial, sans-serif;
       }
+    }
+  }
+}
+
+.signup {
+  display: flex;
+  align-items:center;
+justify-content:center;
+  .signup_bgc {
+    width: 80%;
+    position: relative;
+    img {
+      width: 100%;
+    }
+    .signup_form {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      .form{
+        width: 500px;
+      }
+
     }
   }
 }
