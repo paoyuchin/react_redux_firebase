@@ -12,14 +12,14 @@ export const weatherAction = () => {
       let response = await fetch(url);
       const jsonResponse = await response.json()
       console.log('jsonResponse', jsonResponse)
-      dispatch({
-        type: "GET_WEATHER",
-        weather_res: {
-          weather: jsonResponse.weather[0].description,
-          cityName: jsonResponse.name,
-          weatherIconUrl: `http://openweathermap.org/img/w/${jsonResponse.weather[0].icon}.png`
-        }
-      });
+      // dispatch({
+      //   type: "GET_WEATHER",
+      //   weather_res: {
+      //     weather: jsonResponse.weather[0].description,
+      //     cityName: jsonResponse.name,
+      //     weatherIconUrl: `http://openweathermap.org/img/w/${jsonResponse.weather[0].icon}.png`
+      //   }
+      // });
     });   
   };
 };

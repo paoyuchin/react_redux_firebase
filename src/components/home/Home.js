@@ -276,3 +276,4 @@ export default compose(
 )(Home);
 
 // https://github.com/FormidableLabs/nuka-carousel
+// https://react-bootstrap.github.io/components/carousel/

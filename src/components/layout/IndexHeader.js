@@ -1,71 +1,55 @@
 import React from "react";
 import "../common.scss";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
+// import "react-responsive-carousel/lib/styles/carousel.min.css";
+// import { Carousel } from "react-responsive-carousel";
+// import Slider from "react-slick";
+import Carousel from 'react-bootstrap/Carousel'
+
+
 
 const IndexHeader = () => {
   return (
-    <Carousel autoPlay>
-      <div>
-        <img src="http://lorempixel.com/output/cats-q-c-640-480-1.jpg" />
-        <p className="legend">Legend 1</p>
-      </div>
-      <div>
-        <img src="http://lorempixel.com/output/cats-q-c-640-480-2.jpg" />
-        <p className="legend">Legend 2</p>
-      </div>
-      <div>
-        <img src="http://lorempixel.com/output/cats-q-c-640-480-3.jpg" />
-        <p className="legend">Legend 3</p>
-      </div>
-      <div>
-        <img src="http://lorempixel.com/output/cats-q-c-640-480-4.jpg" />
-        <p className="legend">Legend 4</p>
-      </div>
-      <div>
-        <img src="http://lorempixel.com/output/cats-q-c-640-480-5.jpg" />
-        <p className="legend">Legend 5</p>
-      </div>
-      <div>
-        <img src="http://lorempixel.com/output/cats-q-c-640-480-6.jpg" />
-        <p className="legend">Legend 6</p>
-      </div>
-      <div>
-        <img src="http://lorempixel.com/output/cats-q-c-640-480-7.jpg" />
-        <p className="legend">Legend 7</p>
-      </div>
-      <div>
-        <img src="http://lorempixel.com/output/cats-q-c-640-480-8.jpg" />
-        <p className="legend">Legend 8</p>
-      </div>
-      <div>
-        <img src="http://lorempixel.com/output/cats-q-c-640-480-9.jpg" />
-        <p className="legend">Legend 9</p>
-      </div>
-      <div>
-        <img src="http://lorempixel.com/output/cats-q-c-640-480-10.jpg" />
-        <p className="legend">Legend 10</p>
-      </div>
-      <div>
-        <img src="http://lorempixel.com/output/cats-q-c-640-480-11.jpg" />
-        <p className="legend">Legend 11</p>
-      </div>
-      <div>
-        <img src="http://lorempixel.com/output/cats-q-c-640-480-12.jpg" />
-        <p className="legend">Legend 12</p>
-      </div>
-      <div>
-        <img src="http://lorempixel.com/output/cats-q-c-640-480-13.jpg" />
-        <p className="legend">Legend 13</p>
-      </div>
-      <div>
-        <img src="http://lorempixel.com/output/cats-q-c-640-480-14.jpg" />
-        <p className="legend">Legend 14</p>
-      </div>
+    <Carousel
+      fade={true}
+      pauseOnHover={false}
+      controls={false}
+      indicators={false}
+      interval={500000}
+    >
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6DXIOzMs_M9dh360rf3NfJLW60StI1Eid6diynse_VEJvceBWcw"
+          alt="First slide"
+        />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="https://haranoujyo.com/assets/img/top/fv_04.jpg"
+          alt="Third slide"
+        />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="https://haranoujyo.com/assets/img/top/fv_01.jpg"
+          alt="Third slide"
+        />
+      </Carousel.Item>
     </Carousel>
   );
 };
 
 export default IndexHeader;
 
-// http://react-responsive-carousel.js.org/
+
+// https://react-bootstrap.github.io/components/carousel/
+
+// clearTimeout(this.timer);
+
+
+// this.timer = setTimeout(() => {
+//   console.log('hi')
+
+// }, 1000);
