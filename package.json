@@ -8,6 +8,7 @@
     "moment": "^2.23.0",
     "node-sass": "^4.12.0",
     "nuka-carousel": "^4.5.8",
+    "postcss-preset-env": "^6.6.0",
     "react": "^16.8.4",
     "react-bootstrap": "^1.0.0-beta.9",
     "react-dom": "^16.8.4",

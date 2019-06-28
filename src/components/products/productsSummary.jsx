@@ -6,11 +6,12 @@ import { connect } from "react-redux";
 import "./product.scss";
 import "../common.scss";
 
-class ProjectDetails extends React.Component {
+class ProductsSummary extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      imageURL: "https://demos.laraget.com/images/loading2.gif"
+      imageURL:
+        "http://www.cadex.com.tw/inc/themes/transcargo/ft-icon/ft-loading.gif"
     };
   }
   componentDidMount() {
@@ -53,4 +54,4 @@ class ProjectDetails extends React.Component {
   }
 }
 
-export default ProjectDetails;
+export default ProductsSummary;

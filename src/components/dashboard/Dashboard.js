@@ -35,6 +35,6 @@ export default compose(
   connect(mapStateToPros),
   firestoreConnect([
     { collection: "projects", orderBy: ["creatAt", "desc"] },
-    { collection: "notifications", orderBy: ["time", "desc"] }
+    { collection: "notifications", limit: 10, orderBy: ["time", "desc"] }
   ])
 )(Dashboard);

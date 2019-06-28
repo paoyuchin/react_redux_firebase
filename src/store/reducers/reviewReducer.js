@@ -21,17 +21,15 @@ const initState = {
     }
   ]
 };
-const projectReducer = (state = initState, action) => {
+const reviewReducer = (state = initState, action) => {
   switch (action.type) {
-    case "CREATE_PROJECT":
-      console.log("CREATE_PROJECT", action.project);
-      return state
-    case "CREATE_PROJECT_ERR":
-      console.log("CREATE_PROJECT_ERR", action.err);
+    case "CREATE_REVIEW":
+      return state;
+    case "CREATE_REVIEW_ERR":
       return state;
     default:
       return state;
   }
 };
 
-export default projectReducer;
+export default reviewReducer;

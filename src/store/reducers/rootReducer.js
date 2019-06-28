@@ -1,5 +1,5 @@
 import authReducer from './authReducer';
-import projectReducer from "./projectReducer";
+import reviewReducer from "./reviewReducer";
 import productsReducer from "./productsReducer";
 import weatherReducer from "./weatherReducer";
 import { combineReducers } from "redux";
@@ -8,7 +8,7 @@ import { firebaseReducer } from 'react-redux-firebase';
 
 const rootReducer = combineReducers({
   auth: authReducer,
-  project: projectReducer,
+  review: reviewReducer,
   firestore: firestoreReducer,
   firebase: firebaseReducer,
   products: productsReducer,

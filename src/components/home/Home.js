@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { createProject } from "../../store/actions/projectActions";
+import { MakeReview } from "../../store/actions/reviewActions";
 import { Redirect } from "react-router-dom";
 import { weatherAction } from "../../store/actions/weatherAction";
 import GoogleMap from "./GoogleMap";
@@ -237,7 +237,7 @@ class Home extends Component {
             <GoogleMap />
           </div>
         </div>
-        <Link className="create_commit" to="/create">
+        <Link className="create_commit" to="/MakeReview">
             <span>來寫評論喔！</span>
             <img
               src="https://michinoeki.kyoto.jp/wp-content/themes/sosimple/img/micchi.png"
