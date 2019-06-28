@@ -6,6 +6,7 @@ import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import { Redirect } from "react-router-dom";
 import "./dashboard.scss";
+import Footer from "../layout/Footer";
 
 class Dashboard extends Component {
   render() {
@@ -13,11 +14,14 @@ class Dashboard extends Component {
     // if (!auth.uid) return <Redirect to="/signin" />;
 
     return (
-      <div className="reviews_bgc">
-        <div className="reviews fixed_size">
-          <ProjectList projects={projects} />
-          <Notification notifications={notifications} />
+      <div>
+        <div className="reviews_bgc">
+          <div className="reviews fixed_size">
+            <ProjectList projects={projects} />
+            <Notification notifications={notifications} />
+          </div>
         </div>
+        <Footer />
       </div>
     );
   }

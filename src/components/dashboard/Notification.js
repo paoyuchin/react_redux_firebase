@@ -5,9 +5,6 @@ const Notification = props => {
   const { notifications } = props;
   return (
     <div className="notification">
-    {/* <div className="title_img">
-        <img src="http://michikiri.com/img/top/hd_information.png" alt="" />
-    </div> */}
       <span className="notification_box">
         {notifications &&
           notifications.map(item => {

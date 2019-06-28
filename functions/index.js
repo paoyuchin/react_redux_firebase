@@ -31,6 +31,7 @@ exports.projectCreated = functions.firestore
 exports.userJoined = functions.auth //trigger when user use auth service
   .user()
   .onCreate(user => {
+    console.log('user', user)
     return admin
       .firestore()
       .collection("users")

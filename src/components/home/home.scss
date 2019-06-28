@@ -1,12 +1,15 @@
 .body_body_color {
-  background-color: #f5f5eb;
+  // background-color: #f5f5eb;
 }
+
 * {
   box-sizing: border-box;
 }
+
 .no_margin {
   margin: 0px !important;
 }
+
 .fixed_size {
   margin-left: auto !important;
   margin-right: auto !important;
@@ -16,6 +19,7 @@
 .see_more {
   width: 100%;
   text-align: center;
+
   .click_to {
     text-decoration: none;
     padding: 10px;
@@ -69,6 +73,7 @@
       width: 50%;
       float: left;
       position: relative;
+
       img {
         border-radius: 50%;
         width: 100%;
@@ -95,20 +100,23 @@
     .title_begin_2 {
       font-size: 25px !important;
     }
+
     .intro_how_content {
       max-width: 1280px;
       margin-left: auto;
       margin-right: auto;
+
       .intro_how_title {
         margin: 15px 15px;
         color: gray;
       }
     }
+
     padding: 95px 0 120px;
     text-align: center;
     position: relative;
-    background: #e5efef url(http://katofarm-f.jp/svg/bg-index-point-bottom.svg)
-      repeat-x center bottom;
+    background: #e5efef url(http://katofarm-f.jp/svg/bg-index-point-bottom.svg) repeat-x center bottom;
+
     &:before {
       display: block;
       content: "";
@@ -116,18 +124,19 @@
       top: 0;
       left: 0;
       width: 100%;
-      background: #fff url(http://katofarm-f.jp/svg/bg-index-message-bottom.svg)
-        repeat-x center bottom;
+      background: #fff url(http://katofarm-f.jp/svg/bg-index-message-bottom.svg) repeat-x center bottom;
       height: 60px;
     }
   }
+
   .create_commit {
     position: fixed;
     bottom: 0;
     right: 0;
   }
+
   .intro_notification {
-    padding: 0px 0 137px;
+    padding: 0px 0 50px;
 
     .intro_notification_content {
       max-width: 1000px;
@@ -135,15 +144,18 @@
       margin-left: auto;
       margin-right: auto;
       font-size: 18px;
+
       .notification_list {
         padding: 7px 22px;
         margin-bottom: 16px;
         border-bottom: 1px dotted #969696;
+
         .action_time {
           text-decoration: none;
           font-style: normal;
           margin-right: 10px;
         }
+
         .username {
           font-weight: 800;
           margin-right: 10px;
@@ -151,6 +163,7 @@
       }
     }
   }
+
   .intro_googlemap {
     padding: 20px 0;
     text-align: center;
@@ -159,9 +172,12 @@
     display: inline-block;
     padding: 40px 0;
     height: 100vh;
-    background-color: #bbb39f;
+    margin-bottom: 200px;
+
+    // background-color: #bbb39f;
     .googlemap_wrap {
       position: relative;
+
       .google_map_plant {
         position: absolute;
         top: 0;
@@ -171,9 +187,10 @@
         margin-left: auto;
         margin-right: auto;
       }
+
       .Googlemap {
         width: calc(100% - 50px);
-        height: 50vh;
+        height: 80vh;
         margin-left: auto;
         margin-right: auto;
         position: relative;
@@ -190,33 +207,41 @@
 .card {
   border: none;
   background-color: inherit;
+
   h3 {
     text-align: center;
     line-height: 1.36364;
     color: #ff9641;
   }
 }
+
 .intro_product {
   width: 100%;
+
   .product_box {
     .product {
       display: inline-block;
       padding: 0;
+
       .product_img {
         width: 100%;
       }
+
       &:nth-child(1) {
         border-right: solid 1px #e6e6e6;
       }
+
       &:nth-child(2) {
         border-right: solid 1px #e6e6e6;
       }
     }
+
     .product_icon {
       width: 30px;
       height: 30px;
       margin: 15px;
     }
+
     .product_1 {
       position: relative;
     }
@@ -226,13 +251,20 @@
 .family_intro {
   .family_img {
     width: 50%;
+
     img {
       width: 100%;
       border-radius: 50%;
     }
   }
+
   .family_content {
+    line-height: 60px;
     width: 50%;
+    padding-top: 100px;
+    padding-left: 15px;
+    padding-right: 15px;
+
   }
 }
 
@@ -242,34 +274,24 @@
     .family_img {
       width: 100%;
     }
+
     .family_content {
       width: 100%;
     }
   }
 }
-// .carousel-inner{
-//   height: 90vh;
-// }
 
-// @media (min-width: 2000) and (max-width: 1346) {
-//   .carousel-item {
-//     img {
-//       height: 95vh;
-//     }
-//   }
-// }
+.m_t_15 {
+  margin-top: 15px;
+}
 
-// @media screen and (min-width:2000px) {
-//   .carousel-item {
-//   img {
-//     height: 95vh;
-//   }
-// }
-// }
+
 @media screen and (max-width: 2000px) and (min-width: 980px) {
   .carousel-item {
     img {
       height: 95vh !important;
     }
   }
-};
+}
+
+;

@@ -5,6 +5,7 @@ import { signUp } from "../../store/actions/authAction";
 import "./sign.scss";
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
+import Footer from '../layout/Footer';
 
 class SignUp extends Component {
   state = {
@@ -26,43 +27,8 @@ class SignUp extends Component {
     const { auth, authError } = this.props;
     if (auth.uid) return <Redirect to="/" />;
     return (
-      <div className="signup">
-        <div className="signup_bgc">
-          {/* <img
-            src="https://www.pakutaso.com/shared/img/thumb/kuchikomi678_TP_V.jpg"
-            alt=""
-          /> */}
-          {/* <div className="signup_form">
-            <p>註冊會員</p>
-            <form className="form" onSubmit={this.handleSubmit}>
-              <label htmlFor="email">email</label>
-              <input type="email" id="email" onChange={this.handleChange} />
-              <label htmlFor="password">password</label>
-              <input
-                type="password"
-                id="password"
-                onChange={this.handleChange}
-              />
-              <label htmlFor="firstName">first name</label>
-              <input
-                type="text"
-                id="firstName"
-                onChange={this.handleChange}
-              />
-              <label htmlFor="lastName">lastname</label>
-              <input
-                type="text"
-                id="lastName"
-                onChange={this.handleChange}
-              />
-              {authError ? (
-                <div className="authError">{authError}</div>
-              ) : null}
-              <div>
-                <button>login in</button>
-              </div>
-            </form>
-          </div> */}
+      <div>
+        <div className="fixed_size">
           <Form className="form" onSubmit={this.handleSubmit}>
             <Form.Group>
               <Form.Label>輸入信箱</Form.Label>
@@ -110,6 +76,7 @@ class SignUp extends Component {
             ) : null}
           </Form>
         </div>
+        <Footer />
       </div>
     );
   }

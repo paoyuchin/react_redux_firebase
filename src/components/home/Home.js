@@ -10,6 +10,7 @@ import Notification from "../dashboard/Notification";
 import { Link } from "react-router-dom";
 import "./home.scss";
 import "../common.scss";
+import Footer from "../layout/Footer";
 
 let moment = require("moment");
 
@@ -43,7 +44,7 @@ class Home extends Component {
           <div className="col-lg-3 col-md-4 col-sm-6 mb-4 float-left">
             <div className="card">
               <img
-                src="https://haranoujyo.com/assets/img/top/strengths_01.svg"
+                src="https://haranoujyo.com/assets/img/top/strengths_03.svg"
                 alt=""
               />
               <h3>歴史ある無農薬・無化学肥料</h3>
@@ -53,7 +54,7 @@ class Home extends Component {
           <div className="col-lg-3 col-md-4 col-sm-6 mb-4 float-left">
             <div className="card">
               <img
-                src="https://haranoujyo.com/assets/img/top/strengths_01.svg"
+                src="https://haranoujyo.com/assets/img/top/strengths_02.svg"
                 alt=""
               />
               <h3>歴史ある無農薬・無化学肥料</h3>
@@ -63,7 +64,7 @@ class Home extends Component {
           <div className="col-lg-3 col-md-4 col-sm-6 mb-4 float-left">
             <div className="card">
               <img
-                src="https://haranoujyo.com/assets/img/top/strengths_01.svg"
+                src="https://haranoujyo.com/assets/img/top/strengths_03.svg"
                 alt=""
               />
               <h3>歴史ある無農薬・無化学肥料</h3>
@@ -73,7 +74,7 @@ class Home extends Component {
           <div className="col-lg-3 col-md-4 col-sm-6 mb-4 float-left">
             <div className="card">
               <img
-                src="https://haranoujyo.com/assets/img/top/strengths_01.svg"
+                src="https://haranoujyo.com/assets/img/top/strengths_04.svg"
                 alt=""
               />
               <h3>歴史ある無農薬・無化学肥料</h3>
@@ -83,7 +84,7 @@ class Home extends Component {
           <div className="col-lg-3 col-md-4 col-sm-6 mb-4 float-left">
             <div className="card">
               <img
-                src="https://haranoujyo.com/assets/img/top/strengths_01.svg"
+                src="https://haranoujyo.com/assets/img/top/strengths_05.svg"
                 alt=""
               />
               <h3>歴史ある無農薬・無化学肥料</h3>
@@ -93,7 +94,7 @@ class Home extends Component {
           <div className="col-lg-3 col-md-4 col-sm-6 mb-4 float-left">
             <div className="card">
               <img
-                src="https://haranoujyo.com/assets/img/top/strengths_01.svg"
+                src="https://haranoujyo.com/assets/img/top/strengths_06.svg"
                 alt=""
               />
               <h3>歴史ある無農薬・無化学肥料</h3>
@@ -103,7 +104,7 @@ class Home extends Component {
           <div className="col-lg-3 col-md-4 col-sm-6 mb-4 float-left">
             <div className="card">
               <img
-                src="https://haranoujyo.com/assets/img/top/strengths_01.svg"
+                src="https://haranoujyo.com/assets/img/top/strengths_07.svg"
                 alt=""
               />
               <h3>歴史ある無農薬・無化学肥料</h3>
@@ -113,7 +114,7 @@ class Home extends Component {
           <div className="col-lg-3 col-md-4 col-sm-6 mb-4 float-left">
             <div className="card">
               <img
-                src="https://haranoujyo.com/assets/img/top/strengths_01.svg"
+                src="https://haranoujyo.com/assets/img/top/strengths_08.svg"
                 alt=""
               />
               <h3>歴史ある無農薬・無化学肥料</h3>
@@ -142,7 +143,7 @@ class Home extends Component {
             {!!this.props.aboutUs && this.props.aboutUs[0].how}
           </p>
         </div>
-        <div className="bgc"></div>
+        <div className="bgc" />
         {/* 3 產品*/}
         <div className="intro_product">
           <div className="title_begin">
@@ -157,7 +158,7 @@ class Home extends Component {
             <div className="col-md-4 product">
               <img
                 className="product_img"
-                src="https://haranoujyo.com/wp/wp-content/uploads/2019/01/01_%E9%9B%91%E7%A9%80%E7%95%91.jpg"
+                src="https://haranoujyo.com/wp/wp-content/uploads/2019/01/01_雑穀畑.jpg"
                 alt=""
               />
               <span className="product_1">
@@ -172,7 +173,7 @@ class Home extends Component {
             <div className="col-md-4 product">
               <img
                 className="product_img"
-                src="https://haranoujyo.com/wp/wp-content/uploads/2019/01/01_%E9%9B%91%E7%A9%80%E7%95%91.jpg"
+                src="https://haranoujyo.com/wp/wp-content/uploads/2019/02/05mochimugi_yuge.jpg"
                 alt=""
               />
               <span className="product_1">
@@ -187,7 +188,7 @@ class Home extends Component {
             <div className="col-md-4 product">
               <img
                 className="product_img"
-                src="https://haranoujyo.com/wp/wp-content/uploads/2019/01/01_%E9%9B%91%E7%A9%80%E7%95%91.jpg"
+                src="https://haranoujyo.com/wp/wp-content/uploads/2019/01/01_雑穀畑.jpg"
                 alt=""
               />
               <span className="product_1">
@@ -206,7 +207,7 @@ class Home extends Component {
             </Link>
           </div>
         </div>
-        <div className="intro_notification">
+        <div className="intro_notification m_t_15">
           <div className="title_begin">
             <p className="title_begin_1">最新留言推波區</p>
           </div>
@@ -221,13 +222,15 @@ class Home extends Component {
                   <span className="action">{item.content} </span>
                 </div>
               ))}
-            <Link className="click_to" to="/Dashboard">
-              來看看大家寫的評論吧
-            </Link>
+            <div className="see_more">
+              <Link className="click_to" to="/Dashboard">
+                來看看大家寫的評論吧
+              </Link>
+            </div>
           </div>
         </div>
         <div className="intro_googlemap">
-        <p>我們在這裡</p>
+          <h4>我們在這裡</h4>
           <div className="googlemap_wrap">
             <img
               className="google_map_plant"
@@ -238,12 +241,13 @@ class Home extends Component {
           </div>
         </div>
         <Link className="create_commit" to="/MakeReview">
-            <span>來寫評論喔！</span>
-            <img
-              src="https://michinoeki.kyoto.jp/wp-content/themes/sosimple/img/micchi.png"
-              alt=""
-            />
+          <span>來寫評論喔！</span>
+          <img
+            src="https://michinoeki.kyoto.jp/wp-content/themes/sosimple/img/micchi.png"
+            alt=""
+          />
         </Link>
+        <Footer />
       </div>
     );
   }

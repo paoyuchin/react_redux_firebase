@@ -13,16 +13,12 @@ class ProjectSummary extends React.Component {
     console.log(1, project.creatAt)
     return (
       <div className="review_box">
-        <div className="post_time">
-          <div className="date">
-            <span>{moment(project.creatAt.toDate()).calendar()}</span>
-          </div>
-        </div>
+   
         <div className="post">
           <div className="review_title">{project.title}</div>
           <p className="review_content">{project.content}</p>
           <div className="postPerson">
-            {project.authorFirstName} {project.authorLastName}
+            {project.authorLastName} 在 {moment(project.creatAt.toDate()).calendar()} 留了評價
           </div>
         </div>
       </div>

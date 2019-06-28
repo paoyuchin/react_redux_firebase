@@ -10,6 +10,7 @@ import "./sign.scss";
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { Alert } from "react-bootstrap";
+import Footer from "../layout/Footer";
 
 class SignIn extends Component {
   state = {
@@ -63,62 +64,43 @@ class SignIn extends Component {
       return <Redirect to="/" />;
     }
     return (
-      // <div className="signIn">
-      //   <div className="left">
-      //     <img src={img} alt="" />
-      //   </div>
-      //   <div className="right">
-      //     <h5>Hello, 輸入你的帳號與密碼 或使用Google帳戶登入</h5>
-      //     <div onClick={this.singInWithGoogle}>sign in wit google</div>
-      //     <button className="google_sign_in">
-      //       <span class="google-button__text">Sign in with Google</span>
-      //     </button>
-      //     <form onSubmit={this.handleSubmit}>
-      //       <label htmlFor="email">email</label>
-      //       <input type="email" id="email" onChange={this.handleChange} />
-      //       <label htmlFor="password">Password</label>
-      //       <input type="password" id="password" onChange={this.handleChange} />
-      //       <div>
-      //         <button>login in</button>
-      //         <div>{authError ? <p>{authError}</p> : null}</div>
-      //       </div>
-      //     </form>
-      //   </div>
-      // </div>
-      <div className="fixed_size">
-        <Form onSubmit={this.handleSubmit}>
-          <Form.Group>
-            <Form.Label>輸入你的帳號</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="Enter email"
-              id="email"
-              onChange={this.handleChange}
-            />
-          </Form.Group>
+      <div>
+        <div className="fixed_size">
+          <Form onSubmit={this.handleSubmit}>
+            <Form.Group>
+              <Form.Label>輸入你的帳號</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Enter email"
+                id="email"
+                onChange={this.handleChange}
+              />
+            </Form.Group>
 
-          <Form.Group>
-            <Form.Label>輸入你的密碼</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Password"
-              id="password"
-              onChange={this.handleChange}
-            />
-          </Form.Group>
-          <Button
-            variant="primary"
-            type="submit"
-            onSubmit={this.handleSubmit}
-          >
-            登入
-          </Button>
-          <div>{authError ? <p>{authError}</p> : null}</div>
-        </Form>
-        <div>懶得登入? 用google一鍵登入</div>
-        <div className="googleBtn" onClick={this.singInWithGoogle}>
-          <img src="https://arts.co.at/Content/Images/googleconnect.png" />
+            <Form.Group>
+              <Form.Label>輸入你的密碼</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                id="password"
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+            <Button
+              variant="primary"
+              type="submit"
+              onSubmit={this.handleSubmit}
+            >
+              登入
+            </Button>
+            <div>{authError ? <p>{authError}</p> : null}</div>
+          </Form>
+          <div>懶得登入? 用google一鍵登入</div>
+          <div className="googleBtn" onClick={this.singInWithGoogle}>
+            <img src="https://arts.co.at/Content/Images/googleconnect.png" />
+          </div>
         </div>
+        <Footer />
       </div>
     );
   }
