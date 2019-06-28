@@ -1,8 +1,8 @@
-import React, { Component} from "react";
+import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import SignedInLinks from "./SignedInLink";
 import SignedOutLinks from "./SingedOutLink";
-import "../../index";
+import "../..";
 import { connect } from "react-redux";
 import "./header.scss";
 import "../common.scss";
@@ -24,13 +24,13 @@ class Navbar extends Component {
       <div className="nav_link inside_header body_body_color">
         {header}
         <Link to="/">
-          <span>Home</span>
+          <span>首頁</span>
         </Link>
         <Link to="/products">
-          <span>PRODUCT</span>
+          <span>產品介紹</span>
         </Link>
         <Link to="/Dashboard">
-          <span>REVIEWS</span>
+          <span>老饕評論</span>
         </Link>
         {link}
       </div>

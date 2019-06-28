@@ -7,7 +7,7 @@ import ProductDetails from "./components/products/ProductDetails";
 import SignIn from './components/auth/SignIn';
 import SignUp from "./components/auth/SignUp";
 import Home from "./components/home/Home";
-import CreateProject from './components/projects/CreateProject';
+import MakeReview from './components/projects/MakeReview';
 import Products from './components/dashboard/Products';
 import { connect } from "react-redux";
 
@@ -26,7 +26,7 @@ class App extends Component {
             <Route exact path="/Dashboard" component={Dashboard} />
             <Route path="/signin" component={SignIn} />
             <Route path="/signup" component={SignUp} />
-            <Route path="/create" component={CreateProject} />
+            <Route path="/MakeReview" component={MakeReview} />
           </Switch>
         </div>
       </BrowserRouter>
