@@ -24,7 +24,7 @@ class Home extends Component {
     const day = moment().format("DD");
     return (
       <div className="home body_body_color">
-        {/* <div>
+        <div>
           今天是{year}年{month}月{day}日
         </div>
         <p>today's weather</p>
@@ -32,8 +32,7 @@ class Home extends Component {
         <img
           src={this.props.weather && this.props.weather.weatherIconUrl}
           alt=""
-        /> */}
-        {/* <GoogleMap /> */}
+        />
         {/* 1 */}
         <div className="title_begin">
           <p className="title_begin_2">
