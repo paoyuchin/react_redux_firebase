@@ -19,21 +19,27 @@ class Home extends Component {
     this.props.getWeather();
   }
   render() {
+    console.log(1, this.props.weather);
     const { notifications } = this.props;
     const year = moment().year();
     const month = moment().format("MM");
     const day = moment().format("DD");
     return (
       <div className="home body_body_color">
-        <div>
-          今天是{year}年{month}月{day}日
+        <div className="index_info">
+          <h2 className="color_03">#微養生飲食</h2>
+          <p className="color_01">
+            Today is {day}/{month}/{year}
+          </p>
+          <p className="color_02">
+            今天的天氣：{this.props.weather.weather}{" "}
+            <img
+              src={this.props.weather && this.props.weather.weatherIconUrl}
+              alt=""
+            />
+            <span className="color_03">{this.props.weather.tempeture}°C</span>
+          </p>
         </div>
-        <p>today's weather</p>
-        {this.props.weather.weather} at {this.props.weather.cityName}
-        <img
-          src={this.props.weather && this.props.weather.weatherIconUrl}
-          alt=""
-        />
         {/* 1 */}
         <div className="title_begin">
           <p className="title_begin_2">
@@ -132,9 +138,7 @@ class Home extends Component {
           <div className="family_img float-left">
             <img
               src={
-                this.props.aboutUs
-                  ? this.props.aboutUs[0].image1
-                  : undefined
+                this.props.aboutUs ? this.props.aboutUs[0].image1 : undefined
               }
               alt=""
             />

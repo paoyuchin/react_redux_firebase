@@ -15,12 +15,10 @@ class Dashboard extends Component {
 
     return (
       <div>
-        <div className="reviews_bgc">
           <div className="reviews fixed_size">
             <ProjectList projects={projects} />
             <Notification notifications={notifications} />
           </div>
-        </div>
         <Footer />
       </div>
     );

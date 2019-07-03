@@ -44,7 +44,6 @@ class ProductsSummary extends React.Component {
           </div>
         </span>
         <span className="right">
-        <p className="product_number">1</p>
           {/* <p>productID: {product.id}</p> */}
           <p className="product_name">{product.productName}</p>
           <p className="product_content">{product.productContent}</p>

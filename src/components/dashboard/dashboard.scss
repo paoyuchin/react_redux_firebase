@@ -7,7 +7,8 @@
   width: 100%;
   display: flex;
   margin-top: 50px;
-
+flex-direction: inherit;
+justify-content: center;
   .review_list {
     .review_box {
       background-color: rgba(255, 255, 232, 0.4);

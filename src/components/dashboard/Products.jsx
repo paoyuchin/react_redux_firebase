@@ -12,26 +12,30 @@ import { Link } from "react-router-dom";
 import ProductsSummary from "../products/productsSummary";
 import { link } from "fs";
 import "../../config/fbConfig";
+import Footer from "../layout/Footer";
 
 class Products extends React.Component {
   render() {
     const { products } = this.props;
     return (
-      <div className="product_bgc clearfix">
-        <div className="product_list fixed_size">
-          {products &&
-            products.map(product => {
-              return (
-                <Link
-                  className="product float-left"
-                  to={"/products/" + product.id}
-                  key={product.id}
-                >
-                  <ProductsSummary product={product} />
-                </Link>
-              );
-            })}
+      <div>
+        <div className="product_bgc clearfix">
+          <div className="product_list fixed_size">
+            {products &&
+              products.map(product => {
+                return (
+                  <Link
+                    className="product float-left"
+                    to={"/products/" + product.id}
+                    key={product.id}
+                  >
+                    <ProductsSummary product={product} />
+                  </Link>
+                );
+              })}
+          </div>
         </div>
+        <Footer />
       </div>
     );
   }

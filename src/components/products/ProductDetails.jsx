@@ -13,19 +13,20 @@ class ProductDetails extends React.Component {
     super(props);
     this.state = {
       imageURL:
-        "http://www.cadex.com.tw/inc/themes/transcargo/ft-icon/ft-loading.gif"
+        "https://media.tenor.com/images/31b41d2ad4afd0bb55c508f13afcbcf4/tenor.gif"
     };
   }
+  componentDidMount() { }
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    // console.log("prevProps", prevProps);
+    // console.log("prevState", prevState);
+    // console.log("snapshot", snapshot);
+    // console.log("this.props.product", this.props.product);
+  }
 
-  // componentDidMount() {
-  //   console.log('//', this.props.product);
-  //   this.props.product &&
-  //     this.createImageUrlFromFirebase(this.props.product.imageName);
-  // }
-
-  render() {
-    const { product } = this.props;
-    const createImageUrlFromFirebase = imageName => {
+  createImageUrlFromFirebase = imageName => {
+    console.log("imageName", imageName);
+    setTimeout(() => {
       console.log("imageName", imageName);
       var storage = firebase.storage();
       var storageRef = storage.ref();
@@ -39,17 +40,28 @@ class ProductDetails extends React.Component {
           // });
           return `"${url}"`;
         })
-        .catch(error => {
-          console.log(error);
-        });
-    };
+        .catch(
+          error => {
+            console.log(error);
+          },
+          3000,
+          imageName
+        );
+    });
+  };
+
+  render() {
+    const { product } = this.props;
     if (product) {
       return (
         <div className="fixed_size">
           <Card>
             <Card.Img
               variant="top"
-              src="https://fakeimg.pl/200x100/?retina=1&text=こんにちは&font=noto"
+              src={
+                this.props.product.imageName &&
+                this.createImageUrlFromFirebase(this.props.product.imageName)
+              }
             />
             <Card.Body>
               <Card.Title>{product.productName}</Card.Title>

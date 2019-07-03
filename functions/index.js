@@ -47,3 +47,27 @@ exports.userJoined = functions.auth //trigger when user use auth service
         return createNotification(notification);
       });
   });
+
+exports.getProductWithImageUrl = functions.https.onRequest((req, res) => {
+  admin.firestore().collection("products").get().then( snapshot => {
+    snapshot.forEach( product => {
+      console.log(product.data().imageName)
+      console.log(admin.storage())
+      console.log(firebase)
+      // console.log(functions.storage())
+      // console.log(functions.storage().ref())
+      // console.log(admin.storage().ref())
+      admin.storage()
+        .child(`${ product.data().imageName }.jpg`)
+        .getDownloadURL().then(imageUrl => {
+          console.log(imageUrl)
+          res.send({
+            ...product.data(),
+            imageUrl
+          })
+        })
+    })
+  }).catch(reason => {
+    res.send(reason)
+  });
+})
