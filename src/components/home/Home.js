@@ -11,6 +11,8 @@ import { Link } from "react-router-dom";
 import "./home.scss";
 import "../common.scss";
 import Footer from "../layout/Footer";
+import { FaCookie } from "react-icons/fa";
+
 
 let moment = require("moment");
 
@@ -19,7 +21,6 @@ class Home extends Component {
     this.props.getWeather();
   }
   render() {
-    console.log(1, this.props.weather);
     const { notifications } = this.props;
     const year = moment().year();
     const month = moment().format("MM");
@@ -27,23 +28,32 @@ class Home extends Component {
     return (
       <div className="home body_body_color">
         <div className="index_info">
-          <h2 className="color_03">#微養生飲食</h2>
+          <h2 className="color_03">現代人最重視的養生</h2>
           <p className="color_01">
-            Today is {day}/{month}/{year}
+            今天是 {day}/{month}/{year}
           </p>
-          <p className="color_02">
-            今天的天氣：{this.props.weather.weather}{" "}
-            <img
-              src={this.props.weather && this.props.weather.weatherIconUrl}
-              alt=""
-            />
-            <span className="color_03">{this.props.weather.tempeture}°C</span>
-          </p>
+          {this.props.weather.weather ? (
+            <p className="color_02">
+              你所在位置的天氣：{this.props.weather.weather}
+              <img
+                src={
+                  this.props.weather && this.props.weather.weatherIconUrl
+                }
+                alt=""
+              />
+              <span className="color_03">
+                {this.props.weather.tempeture}°C
+              </span>
+            </p>
+          ) : (
+            <p className="color_03">正在幫您搜尋天氣狀況中... </p>
+          )}
         </div>
         {/* 1 */}
         <div className="title_begin">
-          <p className="title_begin_2">
-            安心安全、ちいさな子どもから食べられる作物づくり。
+          <p className="title_begin_1">
+            <FaCookie />
+            小資族與媽媽們最喜愛的養生穀米粥
           </p>
         </div>
         <div className="anounce fixed_size clearfix">
@@ -53,8 +63,10 @@ class Home extends Component {
                 src="https://haranoujyo.com/assets/img/top/strengths_03.svg"
                 alt=""
               />
-              <h3>歴史ある無農薬・無化学肥料</h3>
-              <p>35年間無農薬、無化学肥での栽培方法を続けております。</p>
+              <h3>分享真正食物的價值</h3>
+              <p>
+                每天凌晨的早上，排頭都還看得到月亮時，我們的爐火已開啟！想傳達的就是就是想分享真正的食物價值
+              </p>
             </div>
           </div>
           <div className="col-lg-3 col-md-4 col-sm-6 mb-4 float-left">
@@ -63,8 +75,10 @@ class Home extends Component {
                 src="https://haranoujyo.com/assets/img/top/strengths_02.svg"
                 alt=""
               />
-              <h3>歴史ある無農薬・無化学肥料</h3>
-              <p>35年間無農薬、無化学肥での栽培方法を続けております。</p>
+              <h3>自己種的稻米自己煮</h3>
+              <p>
+                親手由老闆與老闆娘親自下海，不放心交給外人來處理，就怕漏掉一點點的疏失
+              </p>
             </div>
           </div>
           <div className="col-lg-3 col-md-4 col-sm-6 mb-4 float-left">
@@ -73,8 +87,10 @@ class Home extends Component {
                 src="https://haranoujyo.com/assets/img/top/strengths_03.svg"
                 alt=""
               />
-              <h3>歴史ある無農薬・無化学肥料</h3>
-              <p>35年間無農薬、無化学肥での栽培方法を続けております。</p>
+              <h3>每一口就像談戀愛會上癮</h3>
+              <p>
+                通常來一次後，很常會看到二訪的顧客，買著買著就變成了好朋友，開玩笑說吃了真的很有談戀愛的感覺
+              </p>
             </div>
           </div>
           <div className="col-lg-3 col-md-4 col-sm-6 mb-4 float-left">
@@ -83,8 +99,10 @@ class Home extends Component {
                 src="https://haranoujyo.com/assets/img/top/strengths_04.svg"
                 alt=""
               />
-              <h3>歴史ある無農薬・無化学肥料</h3>
-              <p>35年間無農薬、無化学肥での栽培方法を続けております。</p>
+              <h3>最愛與媽媽們約會的穀米粥</h3>
+              <p>
+                上午很常會有媽媽們來特地買我們的穀米粥，最傳統的古米粥原來就是媽媽們最喜歡的味道啊
+              </p>
             </div>
           </div>
           <div className="col-lg-3 col-md-4 col-sm-6 mb-4 float-left">
@@ -93,8 +111,10 @@ class Home extends Component {
                 src="https://haranoujyo.com/assets/img/top/strengths_05.svg"
                 alt=""
               />
-              <h3>歴史ある無農薬・無化学肥料</h3>
-              <p>35年間無農薬、無化学肥での栽培方法を続けております。</p>
+              <h3>在地嘉義人一致推薦</h3>
+              <p>
+                左鄰右舍都好喜歡我們煮的粥，都會「偷偷的」請我們先保留幾一些讓，每個吃過的在地人都口耳相傳，價格很親民的養生粥！
+              </p>
             </div>
           </div>
           <div className="col-lg-3 col-md-4 col-sm-6 mb-4 float-left">
@@ -103,8 +123,10 @@ class Home extends Component {
                 src="https://haranoujyo.com/assets/img/top/strengths_06.svg"
                 alt=""
               />
-              <h3>歴史ある無農薬・無化学肥料</h3>
-              <p>35年間無農薬、無化学肥での栽培方法を続けております。</p>
+              <h3>網美網紅來嘉義必訪</h3>
+              <p>
+                嘉義是一個文青之地，有著很多美食與文化的地方，透過不少網路的介紹，不少「網紅」都會拿著我們的粥照相或自拍，起出老闆娘覺得很困惑，不過原來這就是網美在做的事啊！
+              </p>
             </div>
           </div>
           <div className="col-lg-3 col-md-4 col-sm-6 mb-4 float-left">
@@ -113,8 +135,10 @@ class Home extends Component {
                 src="https://haranoujyo.com/assets/img/top/strengths_07.svg"
                 alt=""
               />
-              <h3>歴史ある無農薬・無化学肥料</h3>
-              <p>35年間無農薬、無化学肥での栽培方法を続けております。</p>
+              <h3>嘉義必吃早餐！全十穀粥</h3>
+              <p>
+                「每天一碗十穀粥，健康長壽多更多」好吃到不會覺得是養生十穀粥，放下罪惡的零食們，來一碗十穀粥吧
+              </p>
             </div>
           </div>
           <div className="col-lg-3 col-md-4 col-sm-6 mb-4 float-left">
@@ -123,22 +147,26 @@ class Home extends Component {
                 src="https://haranoujyo.com/assets/img/top/strengths_08.svg"
                 alt=""
               />
-              <h3>歴史ある無農薬・無化学肥料</h3>
-              <p>35年間無農薬、無化学肥での栽培方法を続けております。</p>
+              <h3>手工多種口味醇奶酪</h3>
+              <p>
+                我們還滿足了你吃想吃甜點的慾望！連甜點都是我們手工做的醇奶酪！我特別推薦紅豆奶酪口味
+              </p>
             </div>
           </div>
         </div>
         <div className="title_begin">
           <p className="title_begin_1">
-            \我的養生之道就是盡量吃「真正」的食物/
+            <FaCookie />
+            年輕八年級生最重視的養生計畫
           </p>
-          <p className="title_begin_2">我對食物的堅持＿只吃最簡單的食物</p>
         </div>
         <div className="clearfix fixed_size family_intro">
           <div className="family_img float-left">
             <img
               src={
-                this.props.aboutUs ? this.props.aboutUs[0].image1 : undefined
+                this.props.aboutUs
+                  ? this.props.aboutUs[0].image1
+                  : undefined
               }
               alt=""
             />
@@ -152,17 +180,15 @@ class Home extends Component {
         <div className="intro_product">
           <div className="title_begin">
             <p className="title_begin_1">
-              \發自內心的真誠，以客戶需求為第一優先 /
-            </p>
-            <p className="title_begin_2">
-              提供最佳品質與完善服務為第一項目，並提升品牌的能見度，達到永續經營的目標。
+              <FaCookie />
+              在地嘉義人最推薦的前三名食物！
             </p>
           </div>
           <div className="product_box">
             <div className="col-md-4 product">
               <img
                 className="product_img"
-                src="https://haranoujyo.com/wp/wp-content/uploads/2019/01/01_雑穀畑.jpg"
+                src="https://healthydiary.org/wp-content/uploads/2017/10/1466651727320.jpg"
                 alt=""
               />
               <span className="product_1">
@@ -171,13 +197,13 @@ class Home extends Component {
                   src="https://haranoujyo.com/assets/img/common/rank_01.svg"
                   alt=""
                 />
-                提供最佳品質與完善服務為第一項目
+                穀米粥
               </span>
             </div>
             <div className="col-md-4 product">
               <img
                 className="product_img"
-                src="https://haranoujyo.com/wp/wp-content/uploads/2019/02/05mochimugi_yuge.jpg"
+                src="https://cp1.douguo.com/upload/caiku/6/7/5/yuan_672859a165b3e42edc375a690d6f7bc5.jpg"
                 alt=""
               />
               <span className="product_1">
@@ -186,13 +212,13 @@ class Home extends Component {
                   src="https://haranoujyo.com/assets/img/common/rank_02.svg"
                   alt=""
                 />
-                提供最佳品質與完善服務為第一項目
+                全十穀粥
               </span>
             </div>
             <div className="col-md-4 product">
               <img
                 className="product_img"
-                src="https://haranoujyo.com/wp/wp-content/uploads/2019/01/01_雑穀畑.jpg"
+                src="http://www.yinpo1939.com.tw/proimages/sr/pudding/%E7%B4%85%E8%B1%86%E5%A5%B6%E9%85%AA-%E9%8A%80%E6%B3%A2%E5%B8%83%E4%B8%81%20(1).jpg"
                 alt=""
               />
               <span className="product_1">
@@ -201,7 +227,7 @@ class Home extends Component {
                   src="https://haranoujyo.com/assets/img/common/rank_03.svg"
                   alt=""
                 />
-                提供最佳品質與完善服務為第一項目
+                純鮮奶酪
               </span>
             </div>
           </div>
@@ -213,7 +239,10 @@ class Home extends Component {
         </div>
         <div className="intro_notification m_t_15">
           <div className="title_begin">
-            <p className="title_begin_1">最新留言推波區</p>
+            <p className="title_begin_1">
+              <FaCookie />
+              饕客留言
+            </p>
           </div>
           <div className="intro_notification_content">
             {notifications &&

@@ -13,7 +13,7 @@ const IndexHeader = () => {
         pauseOnHover={false}
         controls={false}
         indicators={false}
-        interval={1000}
+        interval={2000}
       >
         <Carousel.Item>
           <img

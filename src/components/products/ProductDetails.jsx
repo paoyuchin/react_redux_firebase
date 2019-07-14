@@ -18,10 +18,6 @@ class ProductDetails extends React.Component {
   }
   componentDidMount() { }
   componentDidUpdate(prevProps, prevState, snapshot) {
-    // console.log("prevProps", prevProps);
-    // console.log("prevState", prevState);
-    // console.log("snapshot", snapshot);
-    // console.log("this.props.product", this.props.product);
   }
 
   createImageUrlFromFirebase = imageName => {

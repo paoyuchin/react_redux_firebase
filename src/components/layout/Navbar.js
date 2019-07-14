@@ -8,6 +8,7 @@ import "./header.scss";
 import "../common.scss";
 import InsideHeader from "./InsideHeader";
 import IndexHeader from "./IndexHeader";
+import { FaHome } from "react-icons/fa";
 
 
 
@@ -24,7 +25,7 @@ class Navbar extends Component {
       <div className="nav_link inside_header body_body_color">
         {header}
         <Link to="/">
-          <span>首頁</span>
+          <span><FaHome />首頁</span>
         </Link>
         <Link to="/products">
           <span>產品介紹</span>

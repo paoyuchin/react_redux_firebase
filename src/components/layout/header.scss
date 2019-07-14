@@ -165,7 +165,7 @@
 }
 
 .InsideHeader {
-  background-image: url(https://haranoujyo.com/assets/img/news_archive/ttl_bg.jpg);
+  background-image: url(https://haranoujyo.com/assets/img/pice_soybean/ttl_bg.jpg);
   background-position: 0 0;
   height: 352px;
   background-size: cover;
@@ -178,9 +178,10 @@
   justify-content: center;
 
   .inside_title {
-    color: white;
-    padding: 30px 60px;
-    background-color: rgba(255, 256, 232, 0.4)
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: 5px;
+    color: black;
+    padding: 30px 37px;
   }
 }
 
