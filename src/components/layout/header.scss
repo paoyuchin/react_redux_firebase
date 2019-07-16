@@ -1,157 +1,29 @@
 // common css setting
-@mixin cloud($width,
-  $height,
-  $afterWidth,
-  $afterHeight,
-  $beforeWidth,
-  $beforeHeight) {
-  width: $width;
-  height: $height;
-  background-color: white;
-  position: absolute;
-  border-radius: 100px;
-
-  &:after {
-    width: $afterWidth;
-    height: $afterHeight;
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-    background-color: white;
-  }
-
-  &:before {
-    content: "";
-    position: absolute;
-    background-color: white;
-    width: $beforeWidth;
-    height: $beforeHeight;
-    border-radius: 100px;
-  }
+*{
+  // outline:1px solid red;
 }
 
-// logo animation
-@keyframes nav-product {
-  0% {
-    background-position: 0 0;
-  }
+// .review{
+//   position: relative;
+//   .note_img {
+//     position: absolute;
+//     top: 0px;
+//     left: 0px;
+//     width: 60px;
+//     height: 50px;
+//     background: url(http://katofarm-f.jp/sprite/nav-letters-sprite@2x.png) no-repeat 0 0;
+//     background-size: 60px 500px;
+//   }
+// }
 
-  100% {
-    background-position: 0 -450px;
-  }
-}
+  // &:hover .note_img {
+  //   animation: nav-product 1.3s steps(9) infinite;
+  // }
 
-@keyframes nav-about {
-  0% {
-    background-position: 0 0;
-  }
 
-  100% {
-    background-position: 0 -770px;
-  }
-}
-
-//grass
-.cloud1 {
-  color: #3c3530;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 0.06em;
-  display: block;
-  width: 180px;
-  height: 124px;
-  background: url(http://katofarm-f.jp/svg/bg-nav-katofarm.svg) no-repeat 0 0;
-  background-size: 100% auto;
-  left: 4%;
-  top: 4%;
-  position: absolute;
-
-  p {
-    text-align: center;
-  }
-
-  img {
-    display: block;
-    margin: 0 auto;
-  }
-}
-
-//rice
-.cloud2 {
-  color: #3c3530;
-  font-size: 12px;
-  font-weight: bold;
-  display: block;
-  width: 180px;
-  height: 124px;
-  background: url(http://katofarm-f.jp/svg/bg-nav-product-cloud.svg) no-repeat 0 0;
-  background-size: 100% auto;
-  left: 22%;
-  top: 10%;
-  position: absolute;
-  text-align: center;
-  cursor: pointer;
-
-  &:hover .grass_img {
-    animation: nav-product 1.3s steps(9) infinite;
-  }
-
-  .grass_img {
-    position: absolute;
-    top: 30px;
-    left: 60px;
-    width: 60px;
-    height: 50px;
-    background: url(http://katofarm-f.jp/sprite/nav-product-sprite@2x.png) no-repeat 0 0;
-    background-size: 60px 500px;
-  }
-}
-
-.cloud3 {
-  position: absolute;
-  background: url(http://katofarm-f.jp/svg/bg-nav-product-cloud.svg) no-repeat 0 0;
-  background-size: 100% auto;
-  width: 193px;
-  height: 113px;
-  left: 40%;
-  top: 2%;
-  color: #3c3530;
-  font-size: 12px;
-  font-weight: bold;
-  cursor: pointer;
-
-  &:hover .note_img {
-    animation: nav-product 1.3s steps(9) infinite;
-  }
-
-  .note_img {
-    position: absolute;
-    top: 30px;
-    left: 60px;
-    width: 60px;
-    height: 50px;
-    background: url(http://katofarm-f.jp/sprite/nav-letters-sprite@2x.png) no-repeat 0 0;
-    background-size: 60px 500px;
-  }
-}
-
-//grass
-.cloud4 {
-  position: absolute;
-  background: url(http://katofarm-f.jp/svg/bg-nav-about-cloud.svg) no-repeat 0 0;
-  background-size: 100% auto;
-  width: 193px;
-  height: 113px;
-  left: 65%;
-  top: 10%;
-  color: #3c3530;
-  font-size: 12px;
-  font-weight: bold;
-  cursor: pointer;
-
-  &:hover .grassimg {
-    animation: nav-about 1s steps(14) infinite;
-  }
+  // &:hover .grassimg {
+  //   animation: nav-about 1s steps(14) infinite;
+  // }
 
   .grassimg {
     top: 40px;
@@ -162,7 +34,6 @@
     background-size: 53px 825px;
     position: absolute;
   }
-}
 
 .InsideHeader {
   background-image: url(https://haranoujyo.com/assets/img/pice_soybean/ttl_bg.jpg);

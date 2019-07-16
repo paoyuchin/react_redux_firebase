@@ -13,15 +13,23 @@ class Dashboard extends Component {
     const { projects, auth, notifications } = this.props;
     // if (!auth.uid) return <Redirect to="/signin" />;
 
-    return (
-      <div>
-          <div className="reviews fixed_size">
-            <ProjectList projects={projects} />
-            <Notification notifications={notifications} />
-          </div>
-        <Footer />
-      </div>
-    );
+    if(!this.props){
+      return(
+        <div>
+          <img src="https://mshopstatic-in.vivo.com/dist/images/common/loading_e5479cc.gif" alt=""/>
+        </div>
+      )
+    }else{
+      return (
+        <div>
+            <div className="reviews fixed_size">
+              <ProjectList projects={projects} />
+              <Notification notifications={notifications} />
+            </div>
+          <Footer />
+        </div>
+      );
+    }
   }
 }
 

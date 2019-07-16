@@ -25,13 +25,17 @@ class Navbar extends Component {
       <div className="nav_link inside_header body_body_color">
         {header}
         <Link to="/">
-          <span><FaHome />首頁</span>
+          <span className="index">首頁
+          </span>
         </Link>
         <Link to="/products">
           <span>產品介紹</span>
         </Link>
         <Link to="/Dashboard">
-          <span>老饕評論</span>
+          <span className="review">老饕評論
+            <i className="note_img"></i>
+          
+          </span>
         </Link>
         {link}
       </div>

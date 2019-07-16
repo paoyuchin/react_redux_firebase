@@ -13,7 +13,7 @@ class ProductDetails extends React.Component {
     super(props);
     this.state = {
       imageURL:
-        "https://media.tenor.com/images/31b41d2ad4afd0bb55c508f13afcbcf4/tenor.gif"
+        "https://mshopstatic-in.vivo.com/dist/images/common/loading_e5479cc.gif"
     };
   }
   componentDidMount() { }
