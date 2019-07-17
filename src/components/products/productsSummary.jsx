@@ -11,7 +11,7 @@ class ProductsSummary extends React.Component {
     super(props);
     this.state = {
       imageURL:
-        "http://www.cadex.com.tw/inc/themes/transcargo/ft-icon/ft-loading.gif"
+        "https://mshopstatic-in.vivo.com/dist/images/common/loading_e5479cc.gif"
     };
   }
   componentDidMount() {
@@ -34,22 +34,39 @@ class ProductsSummary extends React.Component {
         console.log(error);
       });
   };
+
   render() {
     const { product } = this.props;
-    return (
-      <React.Fragment>
-        <span className="left">
-          <div className="img_wrap">
-            <img className="img" src={this.state.imageURL} alt="圖片出現錯誤" />
-          </div>
-        </span>
-        <span className="right">
-          {/* <p>productID: {product.id}</p> */}
-          <p className="product_name">{product.productName}</p>
-          <p className="product_content">{product.productContent}</p>
-        </span>
-      </React.Fragment>
-    );
+
+    if (!product) {
+      return (
+        <div>
+          <img
+            src="https://mshopstatic-in.vivo.com/dist/images/common/loading_e5479cc.gif"
+            alt=""
+          />
+        </div>
+      );
+    } else {
+      return (
+        <React.Fragment>
+          <span className="left">
+            <div className="img_wrap">
+              <img
+                className="img"
+                src={this.state.imageURL}
+                alt="圖片出現錯誤"
+              />
+            </div>
+          </span>
+          <span className="right">
+            {/* <p>productID: {product.id}</p> */}
+            <p className="product_name">{product.productName}</p>
+            <p className="product_content">{product.productContent}</p>
+          </span>
+        </React.Fragment>
+      );
+    }
   }
 }
 

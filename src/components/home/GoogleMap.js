@@ -7,6 +7,7 @@ import {
   InfoWindow
 } from "react-google-maps";
 import mapStyles from "./mapStytle";
+import { FaSearchLocation } from "react-icons/fa";
 
 const lat = 25.06878;
 const lng = 121.59003;
@@ -23,8 +24,8 @@ function Map () {
           lng: lng
         }}
         icon={{
-          url: "https://ui-ex.com/images/transparent-twitter-modern-1.png",
-          scaledSize: new window.google.maps.Size(100, 100)
+          url: "https://cdn1.iconfinder.com/data/icons/food-5-7/128/Vigor_Rice-Food-Grain-Bowl-Meal-512.png",
+          scaledSize: new window.google.maps.Size(50, 50)
         }}
       />
       <InfoWindow
@@ -33,7 +34,7 @@ function Map () {
           lng: 121.59003
         }}
       >
-        <div>here!!</div>
+        <div>最好吃的養生粥底加啦！</div>
       </InfoWindow>
     </GoogleMap>
   );

@@ -13,9 +13,41 @@ class ProductDetails extends React.Component {
     super(props);
     this.state = {
       imageURL:
-        "https://media.tenor.com/images/31b41d2ad4afd0bb55c508f13afcbcf4/tenor.gif"
+        "https://mshopstatic-in.vivo.com/dist/images/common/loading_e5479cc.gif"
     };
   }
+<<<<<<< HEAD
+=======
+  componentDidMount() { }
+  componentDidUpdate(prevProps, prevState, snapshot) {
+  }
+
+  createImageUrlFromFirebase = imageName => {
+    console.log("imageName", imageName);
+    setTimeout(() => {
+      console.log("imageName", imageName);
+      var storage = firebase.storage();
+      var storageRef = storage.ref();
+      storageRef
+        .child(`${imageName}.jpg`)
+        .getDownloadURL()
+        .then(url => {
+          console.log("url", url);
+          // this.setState({
+          //   imageURL: url
+          // });
+          return `"${url}"`;
+        })
+        .catch(
+          error => {
+            console.log(error);
+          },
+          3000,
+          imageName
+        );
+    });
+  };
+>>>>>>> 6a0b845a90577134af2a2d3644fa408d9405a70c
 
   render() {
     const { product } = this.props;

@@ -31,18 +31,6 @@ class MakeReview extends Component {
       return <Redirect to="/signin" />;
     }
     return (
-      // <div>
-      //   <form onSubmit={this.handleSubmit}>
-      //     <h5>CREATE MY PROJECT</h5>
-      //     <label htmlFor="title">title</label>
-      //     <input type="text" id="title" onChange={this.handleChange} />
-      //     <label htmlFor="content">Project content</label>
-      //     <textarea id="content" onChange={this.handleChange} />
-      //     <div>
-      //       <button>submit</button>
-      //     </div>
-      //   </form>
-      // </div>
       <div className="fixed_size">
         <Form onSubmit={this.handleSubmit}>
           <Form.Label>請輸入你的主旨與評論</Form.Label>

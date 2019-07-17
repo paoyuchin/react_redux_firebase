@@ -21,12 +21,13 @@ exports.projectCreated = functions.firestore
   .onCreate(doc => {
     const project = doc.data();
     const notification = {
-      content: "jsut added a new review",
+      content: "新增了一則評論",
       user: `${project.authorFirstName}${project.authorLastName}`,
       time: admin.firestore.FieldValue.serverTimestamp()
     };
     return createNotification(notification);
   });
+<<<<<<< HEAD
 
 exports.userJoined = functions.auth //trigger when user use auth service
   .user()
@@ -71,3 +72,5 @@ exports.userJoined = functions.auth //trigger when user use auth service
 //     res.send(reason)
 //   });
 // })
+=======
+>>>>>>> 6a0b845a90577134af2a2d3644fa408d9405a70c
