@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import Notification from "./Notification";
+import Footer from "../layout/Footer";
 import ProjectList from "../projects/ProjectList";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import { Redirect } from "react-router-dom";
 import "./dashboard.scss";
-import Footer from "../layout/Footer";
 
 class Dashboard extends Component {
   render() {

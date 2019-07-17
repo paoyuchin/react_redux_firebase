@@ -15,11 +15,30 @@ import Footer from "../layout/Footer";
 let moment = require("moment");
 
 class Home extends Component {
+  state = {
+    position: ""
+  };
+
   componentDidMount() {
     this.props.getWeather();
+    window.addEventListener("scroll", this.windowScroll);
   }
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.windowScroll);
+  }
+
+  windowScroll = () => {
+    const scroll =
+      document.body.scrollTop || document.documentElement.scrollTop;
+    this.setState({
+      position: scroll
+    });
+    if(this.state.position <= 300){
+      console.log('hi')
+    }
+  };
+
   render() {
-    console.log(1, this.props.weather);
     const { notifications } = this.props;
     const year = moment().year();
     const month = moment().format("MM");
@@ -29,10 +48,10 @@ class Home extends Component {
         <div className="index_info">
           <h2 className="color_03">#微養生飲食</h2>
           <p className="color_01">
-            Today is {day}/{month}/{year}
+            今天是 {day}/{month}/{year}
           </p>
           <p className="color_02">
-            今天的天氣：{this.props.weather.weather}{" "}
+            你所在地方的天氣：{this.props.weather.weather}{" "}
             <img
               src={this.props.weather && this.props.weather.weatherIconUrl}
               alt=""

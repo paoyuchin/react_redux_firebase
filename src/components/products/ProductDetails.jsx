@@ -16,52 +16,16 @@ class ProductDetails extends React.Component {
         "https://media.tenor.com/images/31b41d2ad4afd0bb55c508f13afcbcf4/tenor.gif"
     };
   }
-  componentDidMount() { }
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    // console.log("prevProps", prevProps);
-    // console.log("prevState", prevState);
-    // console.log("snapshot", snapshot);
-    // console.log("this.props.product", this.props.product);
-  }
-
-  createImageUrlFromFirebase = imageName => {
-    console.log("imageName", imageName);
-    setTimeout(() => {
-      console.log("imageName", imageName);
-      var storage = firebase.storage();
-      var storageRef = storage.ref();
-      storageRef
-        .child(`${imageName}.jpg`)
-        .getDownloadURL()
-        .then(url => {
-          console.log("url", url);
-          // this.setState({
-          //   imageURL: url
-          // });
-          return `"${url}"`;
-        })
-        .catch(
-          error => {
-            console.log(error);
-          },
-          3000,
-          imageName
-        );
-    });
-  };
 
   render() {
     const { product } = this.props;
     if (product) {
       return (
-        <div className="fixed_size">
-          <Card>
+        <div className="fixed_size ProductDetails">
+          <Card className="card_wrap">
             <Card.Img
-              variant="top"
-              src={
-                this.props.product.imageName &&
-                this.createImageUrlFromFirebase(this.props.product.imageName)
-              }
+              variant="img"
+              src={product.imageUrl}
             />
             <Card.Body>
               <Card.Title>{product.productName}</Card.Title>
