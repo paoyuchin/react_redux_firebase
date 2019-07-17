@@ -35,9 +35,10 @@ class Home extends Component {
     this.setState({
       position: scroll
     });
-    if(this.state.position <= 300){
-      console.log('hi')
-    }
+    console.log(this.state.position)
+    // // if(this.state.position >= 962){
+
+    // // }
   };
 
   render() {
@@ -48,20 +49,10 @@ class Home extends Component {
     return (
       <div className="home body_body_color">
         <div className="index_info">
-          <h2 className="color_03">現代人最重視的養生</h2>
+          <h3 className="h3_title">大自然給的養生禮物</h3>
+          <h2 className="color_03">穀米私人廚房</h2>
           <p className="color_01">
             今天是 {day}/{month}/{year}
-<<<<<<< HEAD
-          </p>
-          <p className="color_02">
-            你所在地方的天氣：{this.props.weather.weather}{" "}
-            <img
-              src={this.props.weather && this.props.weather.weatherIconUrl}
-              alt=""
-            />
-            <span className="color_03">{this.props.weather.tempeture}°C</span>
-=======
->>>>>>> 6a0b845a90577134af2a2d3644fa408d9405a70c
           </p>
           {this.props.weather.weather ? (
             <p className="color_02">
@@ -304,7 +295,7 @@ class Home extends Component {
             <GoogleMap />
           </div>
         </div>
-        <Link className="create_commit" to="/MakeReview">
+        <Link className={`create_commit ${this.state.position >= 980 ? 'd-no': 'null'}`} to="/MakeReview">
           <span>來寫評論喔！</span>
           <img
             src="https://michinoeki.kyoto.jp/wp-content/themes/sosimple/img/micchi.png"

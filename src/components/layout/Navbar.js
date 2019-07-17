@@ -34,7 +34,6 @@ class Navbar extends Component {
         <Link to="/Dashboard">
           <span className="review">老饕評論
             <i className="note_img"></i>
-          
           </span>
         </Link>
         {link}

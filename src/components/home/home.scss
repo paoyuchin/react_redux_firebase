@@ -1,12 +1,13 @@
-.body_body_color {
-  // background-color: #f5f5eb;
-}
 
 * {
   box-sizing: border-box;
-  // outline: 1px solid red;
+  outline: 1px solid red;
+  font-family: Verdana, Arial, \\5fae\8edf\6b63\9ed1\9ad4, specialTextFont, \\5fae\8edf\96c5\9ed1\9ad4, Microsoft YaHei !important;
 }
 
+.d-no{
+  display: block !important;
+}
 .no_margin {
   margin: 0px !important;
 }
@@ -135,6 +136,9 @@
   }
 
   .create_commit {
+    z-index: 3;
+    transition: .5s;
+    display: none;
     position: fixed;
     bottom: 0;
     right: 0;
@@ -191,6 +195,7 @@
         left: 0;
         margin-left: auto;
         margin-right: auto;
+        display: none;
       }
 
       .Googlemap {
