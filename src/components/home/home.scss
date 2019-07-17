@@ -4,6 +4,11 @@
   outline: 1px solid red;
   font-family: Verdana, Arial, \\5fae\8edf\6b63\9ed1\9ad4, specialTextFont, \\5fae\8edf\96c5\9ed1\9ad4, Microsoft YaHei !important;
 }
+.BigggggIndex{
+position: relative;
+}
+
+
 
 .d-no{
   display: block !important;
@@ -312,11 +317,30 @@
       width: 100%;
     }
   }
+
 }
+
+
+@media (max-width: 933px) {
+   .index_carousel_bg {
+     &:after{
+      background-size: 80% 80%;
+     }
+     .circle {
+          width: 402px;
+          height: 203px;
+       background-color: white;
+     }
+     
+   }
+}
+
 
 .m_t_15 {
   margin-top: 15px;
 }
+
+
 
 
 @media screen and (max-width: 2000px) and (min-width: 980px) {
@@ -329,8 +353,8 @@
 
 .index_info {
   position: absolute;
-  left: 41%;
-  top: 40%;
+    left: 22%;
+    top: 21%;
   z-index: 3;
   font-family: 'Josefin Sans';
 }
