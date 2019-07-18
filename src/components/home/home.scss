@@ -1,18 +1,25 @@
-
 * {
   box-sizing: border-box;
-  outline: 1px solid red;
+  // outline: 1px solid red;
   font-family: Verdana, Arial, \\5fae\8edf\6b63\9ed1\9ad4, specialTextFont, \\5fae\8edf\96c5\9ed1\9ad4, Microsoft YaHei !important;
 }
-.BigggggIndex{
-position: relative;
+
+.BigggggIndex {
+  position: relative;
+  overflow: hidden;
 }
 
+.display_inline{
+  display: inline !important;
+}
+.font_size_18 {
+  font-size: 18px;
+}
 
-
-.d-no{
+.d-no {
   display: block !important;
 }
+
 .no_margin {
   margin: 0px !important;
 }
@@ -30,8 +37,9 @@ position: relative;
   .click_to {
     &:hover {
       background-color: #D7C0AE;
-      color:white;
+      color: white;
     }
+
     transition: .5s;
     text-decoration: none;
     padding: 10px;
@@ -241,18 +249,21 @@ position: relative;
   width: 100%;
 
   .product_box {
+        display: inline-block;
+    padding: 0;
+    overflow: hidden;
     .product {
       &:hover {
         opacity: 1;
         backface-visibility: hidden;
       }
+
       display: inline-block;
       padding: 0;
-      height: 300px;
 
       .product_img {
-        height: 100%;
-        width: 100%;
+          height: 286px;
+          width: 100%;
       }
 
       &:nth-child(1) {
@@ -321,18 +332,37 @@ position: relative;
 }
 
 
-@media (max-width: 933px) {
-   .index_carousel_bg {
-     &:after{
+@media (max-width: 980px) {
+  .index_carousel_bg {
+    &:after {
       background-size: 80% 80%;
-     }
-     .circle {
-          width: 402px;
-          height: 203px;
-       background-color: white;
-     }
-     
+    }
+
+    .circle {
+      width: 302px;
+      height: 200px;
+      background-color: white;
+    }
+  }
+  .index_info{
+    .h3_title{
+      font-size: 14px;
+    }
+    .color_03{
+      font-size: 14px;
+    }
+    .color_01{
+      font-size: 14px;
+    }
+    .color_02{
+      font-size: 14px;
+    }
+  }
+  .family_intro{
+   .family_content{
+padding-top: 15px;
    }
+  }
 }
 
 
@@ -353,8 +383,13 @@ position: relative;
 
 .index_info {
   position: absolute;
-    left: 22%;
-    top: 21%;
+  top: 20%;
   z-index: 3;
   font-family: 'Josefin Sans';
+  width: 100%;
+  text-align: center;
+}
+
+.weather_img_info {
+  display: inline;
 }

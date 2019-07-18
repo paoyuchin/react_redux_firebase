@@ -25,22 +25,23 @@ class IndexHeader extends Component {
           <div className="index_info">
             <h3 className="h3_title">大自然給的養生禮物</h3>
             <h2 className="color_03">穀米私人廚房</h2>
-            <p className="color_01">
+            <p className="color_01 font_size_18">
               今天是 {day}/{month}/{year}
             </p>
             {this.props.weather.weather ? (
-              <p className="color_02">
+              <p className="color_02 font_size_18">
                 你所在位置的天氣：{this.props.weather.weather}
                 <img
+                  className="weather_img_info"
                   src={this.props.weather && this.props.weather.weatherIconUrl}
                   alt=""
                 />
-                <span className="color_03">
+                <span className="color_03 font_size_18 display_inline">
                   {this.props.weather.tempeture}°C
                 </span>
               </p>
             ) : (
-                <p className="color_03">正在幫您搜尋天氣狀況中... </p>
+                <p className="color_03 font_size_18">正在幫您搜尋天氣狀況中... </p>
               )}
           </div>
         </p>
