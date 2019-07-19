@@ -186,8 +186,10 @@ class Home extends Component {
           <div className="product_box">
             <div className="col-md-4 product">
               <img
+              width = "690"
+              height = "200"
                 className="product_img"
-                src="https://healthydiary.org/wp-content/uploads/2017/10/1466651727320.jpg"
+                src = "https://img2.tsuyaplus.jp/wp-content/uploads/2018/12/33148b1cb7740927c369e11c2b8a8389.png"
                 alt=""
               />
               <span className="product_1">
@@ -201,12 +203,16 @@ class Home extends Component {
             </div>
             <div className="col-md-4 product">
               <img
+              width = "690"
+              height = "450"
                 className="product_img"
-                src="https://cp1.douguo.com/upload/caiku/6/7/5/yuan_672859a165b3e42edc375a690d6f7bc5.jpg"
+                src="https://haranoujyo.com/wp/wp-content/uploads/2019/02/05mochimugi_yuge.jpg"
                 alt=""
               />
               <span className="product_1">
                 <img
+                width = "690"
+                height = "450"
                   className="product_icon"
                   src="https://haranoujyo.com/assets/img/common/rank_02.svg"
                   alt=""

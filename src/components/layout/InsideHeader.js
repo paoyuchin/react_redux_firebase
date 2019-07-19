@@ -8,7 +8,7 @@ class InsideHeader extends React.Component {
       console.log(6666, "currentUrl", currentUrl);
     switch (currentUrl) {
       case "/products":
-        return "產品介紹";
+        return "我們的產品";
         break;
       case "/Dashboard":
         return '產品留言板'
@@ -18,6 +18,7 @@ class InsideHeader extends React.Component {
       case '/signup':
         return '註冊'
       default:
+        return '產品介紹'
         console.log("sorry something wrong");
     }
   };
