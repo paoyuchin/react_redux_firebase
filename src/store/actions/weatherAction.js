@@ -8,7 +8,7 @@ export const weatherAction = () => {
       position.lat = showPosition.coords.latitude;
       position.lon = showPosition.coords.longitude;
       const weather_api_key = '9a5f84034829a85ac2b2686990cffdcc';
-      const url = `http://api.openweathermap.org/data/2.5/weather?&lat=${position.lat}&lon=${position.lon}&units=metric&APPID=${weather_api_key}&lang=zh_tw`
+      const url = `https://api.openweathermap.org/data/2.5/weather?&lat=${position.lat}&lon=${position.lon}&units=metric&APPID=${weather_api_key}&lang=zh_tw`
       let response = await fetch(url);
       const jsonResponse = await response.json()
       console.log('jsonResponse', jsonResponse)
