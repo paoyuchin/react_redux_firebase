@@ -17,7 +17,7 @@ export const weatherAction = () => {
         weather_res: {
           weather: jsonResponse.weather[0].description,
           cityName: jsonResponse.name,
-          weatherIconUrl: `http://openweathermap.org/img/w/${jsonResponse.weather[0].icon}.png`,
+          weatherIconUrl: `https://openweathermap.org/img/w/${jsonResponse.weather[0].icon}.png`,
           tempeture: jsonResponse.main.temp,
         }
       });
